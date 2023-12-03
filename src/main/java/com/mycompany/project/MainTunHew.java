@@ -34,7 +34,7 @@ public class MainTunHew extends javax.swing.JFrame {
         setTitle("Main Program");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnTunHue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunHuw_default.png"))); // NOI18N
+        btnTunHue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunHew_default.png"))); // NOI18N
         btnTunHue.setBorder(null);
         btnTunHue.setBorderPainted(false);
         btnTunHue.setContentAreaFilled(false);

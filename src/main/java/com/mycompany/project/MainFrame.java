@@ -50,7 +50,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         getContentPane().add(btnTunSafe, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 200, 100));
 
-        btnTunHue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunHuw_default.png"))); // NOI18N
+        btnTunHue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunHew_default.png"))); // NOI18N
         btnTunHue.setBorder(null);
         btnTunHue.setBorderPainted(false);
         btnTunHue.setContentAreaFilled(false);

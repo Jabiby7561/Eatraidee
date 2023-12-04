@@ -56,9 +56,6 @@ public class MainFrame extends javax.swing.JFrame {
         btnTunHue.setContentAreaFilled(false);
         btnTunHue.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTunHue.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnTunHueMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnTunHueMouseEntered(evt);
             }
@@ -71,7 +68,7 @@ public class MainFrame extends javax.swing.JFrame {
                 btnTunHueActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTunHue, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 260, 90));
+        getContentPane().add(btnTunHue, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 170, -1, -1));
 
         btnChefTun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnDaiWelaa_default.png"))); // NOI18N
         btnChefTun.setBorder(null);
@@ -79,6 +76,9 @@ public class MainFrame extends javax.swing.JFrame {
         btnChefTun.setContentAreaFilled(false);
         btnChefTun.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnChefTun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnChefTunMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnChefTunMouseEntered(evt);
             }
@@ -86,10 +86,9 @@ public class MainFrame extends javax.swing.JFrame {
                 btnChefTunMouseExited(evt);
             }
         });
-        getContentPane().add(btnChefTun, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 230, 80));
+        getContentPane().add(btnChefTun, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 296, 230, 80));
 
         btnTunSom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunSom_default.png"))); // NOI18N
-        btnTunSom.setText("jButton2");
         btnTunSom.setBorder(null);
         btnTunSom.setBorderPainted(false);
         btnTunSom.setContentAreaFilled(false);
@@ -102,7 +101,7 @@ public class MainFrame extends javax.swing.JFrame {
                 btnTunSomMouseExited(evt);
             }
         });
-        getContentPane().add(btnTunSom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 230, 80));
+        getContentPane().add(btnTunSom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 415, -1, -1));
 
         btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome.png"))); // NOI18N
         btnHome.setBorder(null);
@@ -192,7 +191,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void btnTunHueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseEntered
         //System.out.println("Enter");
         try{
-            String filePath = "/btnTunHew_Hover.png";
+            String filePath = "/btnTunHew_hover.png";
             imgIcon = new ImageIcon(getClass().getResource(filePath));
             btnTunHue.setIcon(imgIcon);
         }catch(Exception e){
@@ -200,17 +199,21 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnTunHueMouseEntered
 
-    private void btnTunHueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseClicked
+    private void btnTunHueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunHueActionPerformed
         MainTunHew mainTunHew = new MainTunHew();
         mainTunHew.setVisible(true);
         mainTunHew.pack();
         mainTunHew.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_btnTunHueMouseClicked
-
-    private void btnTunHueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunHueActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnTunHueActionPerformed
+
+    private void btnChefTunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChefTunMouseClicked
+        MainDaiWelaa mainDaiWelaa = new MainDaiWelaa();
+        mainDaiWelaa.setVisible(true);
+        mainDaiWelaa.pack();
+        mainDaiWelaa.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnChefTunMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChefTun;

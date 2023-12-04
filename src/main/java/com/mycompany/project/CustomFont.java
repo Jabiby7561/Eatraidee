@@ -1,13 +1,19 @@
+//--PACKAGE--..
 package com.mycompany.project;
 
+//--IMPORT--..
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
 
+//--JAVA CLASS--..
 public class CustomFont {
+    
+    //--VARIABLE--..
     private Font customFont;
 
+    //--METHOD--..
     public CustomFont() {
         this.customFont = null;
     }
@@ -34,3 +40,4 @@ public class CustomFont {
         return new File(filePath);
     }
 }
+//--JAVA FILE's END--..

@@ -26,6 +26,7 @@ public class UserOptionFrame extends javax.swing.JFrame {
 
         btnLogin = new javax.swing.JButton();
         btnSkip = new javax.swing.JButton();
+        btnSignUp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,7 +51,7 @@ public class UserOptionFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, 210, 90));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 210, 90));
 
         btnSkip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnSkip_default.png"))); // NOI18N
         btnSkip.setBorder(null);
@@ -70,7 +71,27 @@ public class UserOptionFrame extends javax.swing.JFrame {
                 btnSkipActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 210, 90));
+        getContentPane().add(btnSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 560, 210, 90));
+
+        btnSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnSignUp_default.png"))); // NOI18N
+        btnSignUp.setBorder(null);
+        btnSignUp.setBorderPainted(false);
+        btnSignUp.setContentAreaFilled(false);
+        btnSignUp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSignUp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSignUpMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSignUpMouseExited(evt);
+            }
+        });
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignUpActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 200, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserOptionFrame.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -134,8 +155,37 @@ public class UserOptionFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnLoginActionPerformed
 
+    private void btnSignUpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignUpMouseEntered
+        try{
+            String filePath = "/btnSignUp_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnSignUp.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnSignUpMouseEntered
+
+    private void btnSignUpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSignUpMouseExited
+        try{
+            String filePath = "/btnSignUp_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnSignUp.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnSignUpMouseExited
+
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+        SignUpFrame signUpFrame = new SignUpFrame();
+        signUpFrame.setVisible(true);
+        signUpFrame.pack();
+        signUpFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnSignUpActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnSignUp;
     private javax.swing.JButton btnSkip;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

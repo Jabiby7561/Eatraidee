@@ -20,6 +20,8 @@ public class LoginFrame extends javax.swing.JFrame {
     
     //--METHOD--..
     public LoginFrame() {
+        Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
+        this.setIconImage(AppIcon);
         initComponents();
         showTextFeild();
     }
@@ -65,12 +67,12 @@ public class LoginFrame extends javax.swing.JFrame {
                 txtUsernameActionPerformed(evt);
             }
         });
-        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 280, 50));
+        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 280, 50));
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setBorder(null);
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, 270, 50));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 270, 50));
 
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnLogin_default.png"))); // NOI18N
         btnLogin.setBorder(null);
@@ -90,7 +92,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 200, 100));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, 200, 100));
 
         labelBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginFrame.png"))); // NOI18N
         getContentPane().add(labelBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -131,50 +133,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        String SUrl, SUser, SPass, query, passDb=null,userDb="null";
-        SUrl = "jdbc:mysql://localhost:3306/java_khaitun_database"; //From XAMMP control in MySql row
-        SUser = "root";
-        SPass = "";
-        int notFound = 0;
-        
-        String username = txtUsername.getText();
-        String password = String.valueOf(txtPassword.getPassword());
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(SUrl,SUser,SPass);
-            Statement st = con.createStatement();
-            
-            if(username.isEmpty() || password.isEmpty()){
-                JOptionPane.showMessageDialog(this, "Username and Password should be not empty!", "Error", JOptionPane.ERROR_MESSAGE);
-            }else{
-                query = "SELECT * FROM user WHERE username='"+username+"'";
-                ResultSet rs = st.executeQuery(query);
-                while(rs.next()){
-                    passDb = rs.getString("password");
-                    userDb = rs.getString("username");
-                    notFound = 1;
-                }
-                if(notFound == 1 && password.equals(passDb)){
-                    JOptionPane.showMessageDialog(new JFrame(), "Login Success", "Success",
-                            JOptionPane.INFORMATION_MESSAGE);
-                    MainFrame mainFrame = new MainFrame();
-                    mainFrame.setVisible(true);
-                    mainFrame.pack();
-                    mainFrame.setLocationRelativeTo(null);
-                    this.dispose();
-                }else{
-                    System.out.println("Password = "+passDb);
-                    System.out.println("Usernaem = "+userDb);
-                    JOptionPane.showMessageDialog(new JFrame(), "Incorrect username or password", "Error",
-                            JOptionPane.ERROR_MESSAGE);
-                }
-
-                txtPassword.setText("");
-            }
-        }catch(Exception e){
-            System.out.println("Error!" + e.getMessage());
-            e.printStackTrace();
-        }
+        //Do this next time
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseEntered

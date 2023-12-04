@@ -23,6 +23,7 @@ public class MainTunHew extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBoiled = new javax.swing.JButton();
         btnTunHue = new javax.swing.JButton();
         btnChefTun = new javax.swing.JButton();
         btnTunSom = new javax.swing.JButton();
@@ -33,6 +34,21 @@ public class MainTunHew extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main Program");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBoiled.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnBoiled_default.png"))); // NOI18N
+        btnBoiled.setBorder(null);
+        btnBoiled.setBorderPainted(false);
+        btnBoiled.setContentAreaFilled(false);
+        btnBoiled.setFocusPainted(false);
+        btnBoiled.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBoiledMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBoiledMouseExited(evt);
+            }
+        });
+        getContentPane().add(btnBoiled, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 182, -1, -1));
 
         btnTunHue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunHew_default.png"))); // NOI18N
         btnTunHue.setBorder(null);
@@ -210,7 +226,28 @@ public class MainTunHew extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnHomeActionPerformed
 
+    private void btnBoiledMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBoiledMouseEntered
+        try{
+            String filePath = "/btnBoiled_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnBoiled.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnBoiledMouseEntered
+
+    private void btnBoiledMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBoiledMouseExited
+        try{
+            String filePath = "/btnBoiled_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnBoiled.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnBoiledMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBoiled;
     private javax.swing.JButton btnChefTun;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnTunHue;

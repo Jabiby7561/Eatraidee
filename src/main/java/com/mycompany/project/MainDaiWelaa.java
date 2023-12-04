@@ -144,6 +144,11 @@ public class MainDaiWelaa extends javax.swing.JFrame {
                 btnTunSomMouseExited(evt);
             }
         });
+        btnTunSom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTunSomActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnTunSom, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 416, -1, -1));
 
         btnTunSafe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunSave_default.png"))); // NOI18N
@@ -356,6 +361,14 @@ public class MainDaiWelaa extends javax.swing.JFrame {
             System.err.println(e);
         }
     }//GEN-LAST:event_btnTypeMouseExited
+
+    private void btnTunSomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSomActionPerformed
+        MainSomHai mainSomHai = new MainSomHai();
+        mainSomHai.setVisible(true);
+        mainSomHai.pack();
+        mainSomHai.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnTunSomActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChefTun;

@@ -80,6 +80,11 @@ public class MainTunHew extends javax.swing.JFrame {
                 btnBoiledMouseExited(evt);
             }
         });
+        btnBoiled.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBoiledActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnBoiled, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 182, -1, -1));
 
         btnChefTun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnDaiWelaa_default.png"))); // NOI18N
@@ -333,6 +338,14 @@ public class MainTunHew extends javax.swing.JFrame {
         mainSomHai.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnTunSomActionPerformed
+
+    private void btnBoiledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoiledActionPerformed
+        MainTunHew_boiled mainTunHew_boiled = new MainTunHew_boiled();
+        mainTunHew_boiled.setVisible(true);
+        mainTunHew_boiled.pack();
+        mainTunHew_boiled.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnBoiledActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBoiled;

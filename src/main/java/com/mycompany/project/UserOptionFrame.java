@@ -51,7 +51,7 @@ public class UserOptionFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 210, 90));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 563, -1, -1));
 
         btnSkip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnSkip_default.png"))); // NOI18N
         btnSkip.setBorder(null);
@@ -71,7 +71,7 @@ public class UserOptionFrame extends javax.swing.JFrame {
                 btnSkipActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 560, 210, 90));
+        getContentPane().add(btnSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(824, 563, -1, -1));
 
         btnSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnSignUp_default.png"))); // NOI18N
         btnSignUp.setBorder(null);

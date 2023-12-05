@@ -8,7 +8,10 @@ import java.awt.Font;
 import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,7 +20,7 @@ import javax.swing.JOptionPane;
  *
  * @author pc
  */
-public class SignUpFrame extends javax.swing.JFrame {
+public class SignUpFrame extends javax.swing.JFrame{
     ImageIcon imgIcon;
     CustomFont customFont;
     /**
@@ -47,6 +50,7 @@ public class SignUpFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SIGN UP");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnBack_default.png"))); // NOI18N
@@ -169,35 +173,61 @@ public class SignUpFrame extends javax.swing.JFrame {
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         String username,password, cfPassword;
         //Check Feild is null?
-        if("".equals(txtUsername.getText())){
+        if(txtUsername.getText().isEmpty()){
             JOptionPane.showMessageDialog(new JFrame(), "Username is required", "Error", 
                     JOptionPane.WARNING_MESSAGE);
-        }else if("".equals(txtPassword.getText())){
+            txtUsername.selectAll();
+            txtUsername.requestFocus();
+        }else if(txtPassword.getText().isEmpty()){
             JOptionPane.showMessageDialog(new JFrame(), "Password is required", "Error", 
                     JOptionPane.WARNING_MESSAGE);
-        }else if("".equals(txtCfPassword.getText())){
+            txtPassword.selectAll();
+            txtPassword.requestFocus();
+        }else if(txtCfPassword.getText().isEmpty()){
             JOptionPane.showMessageDialog(new JFrame(), "Confirm Password is required", "Error", 
                     JOptionPane.WARNING_MESSAGE);
+            txtCfPassword.selectAll();
+            txtCfPassword.requestFocus();
         }else{
             username = txtUsername.getText();
             password = txtPassword.getText();  
             cfPassword = txtCfPassword.getText(); 
-            if(cfPassword.equals(password)){
-                insertToDB(username,password);
-                txtUsername.setText("");
-                txtPassword.setText("");
-                txtCfPassword.setText("");
-                JOptionPane.showMessageDialog(null, "Sign Up Successful");
-                
-                // After show pop-up message back into LoginPage
-                LoginFrame loginFrame = new LoginFrame();
-                loginFrame.setVisible(true);
-                loginFrame.pack();
-                loginFrame.setLocationRelativeTo(null);
-                this.dispose();
-            }else{
-                JOptionPane.showMessageDialog(null, "Confirm password is not match.","Warning",
+            if(!cfPassword.equals(password)){
+                JOptionPane.showMessageDialog(this, "Confirm password is not match.","Warning",
                         JOptionPane.WARNING_MESSAGE);
+                txtCfPassword.selectAll();
+                txtCfPassword.requestFocus();
+            }else{
+                boolean result = fetchUserAll(username);
+                LoginFrame loginFrame = new LoginFrame();
+                if(result==true){
+                    int response = JOptionPane.showConfirmDialog(null, 
+                            "You already have an account\nDo you want to go to login page?", 
+                            "Admin", JOptionPane.YES_NO_OPTION);
+                    if (response == JOptionPane.YES_OPTION) {
+                        loginFrame.setVisible(true);
+                        loginFrame.pack();
+                        loginFrame.setLocationRelativeTo(null);
+                        this.dispose();
+                    }else{
+                        txtUsername.selectAll();
+                        txtUsername.requestFocus();
+                        txtPassword.setText("");
+                        txtCfPassword.setText("");
+                    }
+                }else{
+                    insertToDB(username,password);
+                    txtUsername.setText("");
+                    txtPassword.setText("");
+                    txtCfPassword.setText("");
+                    JOptionPane.showMessageDialog(this, "Sign Up Successful");
+                    
+                    // After show pop-up message back into LoginPage
+                    loginFrame.setVisible(true);
+                    loginFrame.pack();
+                    loginFrame.setLocationRelativeTo(null);
+                    this.dispose();
+                }
             }
         }
     }//GEN-LAST:event_btnSignUpActionPerformed
@@ -237,6 +267,37 @@ public class SignUpFrame extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println(e);
         }
+    }
+    private static boolean fetchUserAll(String username){
+        Connection con = DbConnection.connect();
+        PreparedStatement cursor = null;
+        ResultSet result = null;
+        try{
+            String sqlFetch = "SELECT * FROM userAccount WHERE username = ?";
+            cursor = con.prepareStatement(sqlFetch);
+            cursor.setString(1, username);
+            result = cursor.executeQuery();
+            return result.next();
+            /*while(result.next()){
+                String username = result.getString("username");
+                String password = result.getString("password");
+                System.out.println("ALL USERS : ");
+                System.out.println("USERNAME : "+username);
+                System.out.println("PASSWORD : "+password);
+                System.out.println("\n");
+            }*/
+        }catch(SQLException e){
+            System.out.println("Fetch ALL Data Error : "+e.toString());
+        }finally{
+            try{
+                cursor.close();
+                result.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+        }
+        return false;
     }
     
 

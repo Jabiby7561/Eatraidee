@@ -9,6 +9,6 @@ public class Eatraidee {
         logoFrame.pack();
         logoFrame.setLocationRelativeTo(null);
         
-        //DbConnection.connect();
+        //fetchUserAll();
     }
 }

@@ -5,9 +5,9 @@ package com.mycompany.project;
 import javax.swing.ImageIcon;
 import java.awt.*;
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -38,6 +38,7 @@ public class LoginFrame extends javax.swing.JFrame {
         labelBg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LOG IN");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnBack_default.png"))); // NOI18N
@@ -134,6 +135,15 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         //Do this next time
+        String username = txtUsername.getText();
+        String password = String.valueOf(txtPassword.getPassword());
+        if(username.isEmpty() || password.isEmpty()){
+            JOptionPane.showMessageDialog(new JFrame(), "Username and Password is required", "Error", 
+                    JOptionPane.WARNING_MESSAGE);
+            txtUsername.requestFocus();
+        }else{
+            userLogin(username,password);
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseEntered
@@ -170,6 +180,44 @@ public class LoginFrame extends javax.swing.JFrame {
         txtUsername.setFont(font);
     }
     
+    public void userLogin(String username, String password){
+        Connection con = DbConnection.connect();
+        PreparedStatement cursor = null;
+        ResultSet result = null;
+        if(con != null){
+            try{
+                String sqlFetch = "SELECT username FROM userAccount WHERE username = ? AND password = ?";
+                cursor = con.prepareStatement(sqlFetch);
+                cursor.setString(1,username);
+                cursor.setString(2,password);
+                result = cursor.executeQuery();
+                if(result.next()){
+                    JOptionPane.showMessageDialog(this, "Login Successful!","Info",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                    MainFrame mainFrame = new MainFrame();
+                    mainFrame.setVisible(true);
+                    mainFrame.pack();
+                    mainFrame.setLocationRelativeTo(null);
+                }else{
+                    JOptionPane.showMessageDialog(this, "Username or Password is invalid","Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                    txtPassword.selectAll();
+                    txtPassword.requestFocus();
+                }
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }finally{
+                try{
+                    con.close();
+                    result.close();
+                    cursor.close();
+                }catch(SQLException e){
+                    System.out.println(e.toString());
+                }
+            }
+        }
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

@@ -28,6 +28,7 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
         btnChefTun = new javax.swing.JButton();
         btnTunSom = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
+        ShowMenu = new javax.swing.JLabel();
         labelBgMain = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,6 +115,9 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
         btnHome.setContentAreaFilled(false);
         btnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
+
+        ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Katsudon.png"))); // NOI18N
+        getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, -1, -1));
 
         labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainTunHew_boiled.png"))); // NOI18N
         getContentPane().add(labelBgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -229,6 +233,7 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunSomActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ShowMenu;
     private javax.swing.JButton btnChefTun;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnTunHue;

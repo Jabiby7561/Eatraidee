@@ -23,6 +23,9 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnsSkip = new javax.swing.JButton();
+        btnSelect = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         btnTunSafe = new javax.swing.JButton();
         btnTunHue = new javax.swing.JButton();
         btnChefTun = new javax.swing.JButton();
@@ -35,6 +38,56 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
         setTitle("Main Program");
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnsSkip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnBack2_default.png"))); // NOI18N
+        btnsSkip.setBorder(null);
+        btnsSkip.setBorderPainted(false);
+        btnsSkip.setContentAreaFilled(false);
+        btnsSkip.setFocusPainted(false);
+        btnsSkip.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnsSkipMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnsSkipMouseExited(evt);
+            }
+        });
+        getContentPane().add(btnsSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 360, -1, -1));
+
+        btnSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnSelect_default.png"))); // NOI18N
+        btnSelect.setBorder(null);
+        btnSelect.setBorderPainted(false);
+        btnSelect.setContentAreaFilled(false);
+        btnSelect.setFocusPainted(false);
+        btnSelect.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSelectMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSelectMouseExited(evt);
+            }
+        });
+        getContentPane().add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 357, -1, -1));
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnBack2_default.png"))); // NOI18N
+        btnBack.setBorder(null);
+        btnBack.setBorderPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setFocusPainted(false);
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackMouseExited(evt);
+            }
+        });
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1175, 640, -1, -1));
 
         btnTunSafe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunSave_default.png"))); // NOI18N
         btnTunSafe.setBorder(null);
@@ -114,10 +167,23 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
         btnHome.setBorderPainted(false);
         btnHome.setContentAreaFilled(false);
         btnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHomeMouseExited(evt);
+            }
+        });
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
 
-        ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Katsudon.png"))); // NOI18N
-        getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, -1, -1));
+        ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/KhaoKaMoo.png"))); // NOI18N
+        getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 130, 370, -1));
 
         labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainTunHew_boiled.png"))); // NOI18N
         getContentPane().add(labelBgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -187,7 +253,6 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunSafeMouseExited
 
     private void btnTunHueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseExited
-        //System.out.println("Exit");
         try{
             String filePath = "/btnTunHew_default.png";
             imgIcon = new ImageIcon(getClass().getResource(filePath));
@@ -198,7 +263,6 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunHueMouseExited
 
     private void btnTunHueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseEntered
-        //System.out.println("Enter");
         try{
             String filePath = "/btnTunHew_hover.png";
             imgIcon = new ImageIcon(getClass().getResource(filePath));
@@ -232,13 +296,112 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnTunSomActionPerformed
 
+    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
+        try{
+            String filePath = "/btnBack_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnBack.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnBackMouseEntered
+
+    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
+        try{
+            String filePath = "/btnBack2_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnBack.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnBackMouseExited
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        MainTunHew mainTunHew = new MainTunHew();
+        mainTunHew.setVisible(true);
+        mainTunHew.pack();
+        mainTunHew.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnsSkipMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsSkipMouseEntered
+        try{
+            String filePath = "/btnBack_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnsSkip.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnsSkipMouseEntered
+
+    private void btnsSkipMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsSkipMouseExited
+        try{
+            String filePath = "/btnBack2_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnsSkip.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnsSkipMouseExited
+
+    private void btnSelectMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSelectMouseEntered
+        try{
+            String filePath = "/btnSelect_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnSelect.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnSelectMouseEntered
+
+    private void btnSelectMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSelectMouseExited
+        try{
+            String filePath = "/btnSelect_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnSelect.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnSelectMouseExited
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        MainFrame mainFrame = new MainFrame();
+        mainFrame.setVisible(true);
+        mainFrame.pack();
+        mainFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
+        try{
+            String filePath = "/btnHome_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnHome.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnHomeMouseEntered
+
+    private void btnHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseExited
+        try{
+            String filePath = "/btnHome_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnHome.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnHomeMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ShowMenu;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChefTun;
     private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnSelect;
     private javax.swing.JButton btnTunHue;
     private javax.swing.JButton btnTunSafe;
     private javax.swing.JButton btnTunSom;
+    private javax.swing.JButton btnsSkip;
     private javax.swing.JLabel labelBgMain;
     // End of variables declaration//GEN-END:variables
 }

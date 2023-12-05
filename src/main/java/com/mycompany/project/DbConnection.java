@@ -1,10 +1,15 @@
+//--PACKAGE--..
 package com.mycompany.project;
 
+//--IMPORT--..
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//--JAVA CLASS--..
 public class DbConnection {
+    
+    //--METHOD--..
     public static Connection connect(){
         Connection con = null;
         try{

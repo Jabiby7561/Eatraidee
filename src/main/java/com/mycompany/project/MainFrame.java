@@ -113,6 +113,14 @@ public class MainFrame extends javax.swing.JFrame {
         btnHome.setBorderPainted(false);
         btnHome.setContentAreaFilled(false);
         btnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHomeMouseExited(evt);
+            }
+        });
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
 
         labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainFrame.png"))); // NOI18N
@@ -183,7 +191,6 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunSafeMouseExited
 
     private void btnTunHueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseExited
-        //System.out.println("Exit");
         try{
             String filePath = "/btnTunHew_default.png";
             imgIcon = new ImageIcon(getClass().getResource(filePath));
@@ -194,8 +201,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunHueMouseExited
 
     private void btnTunHueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseEntered
-        //System.out.println("Enter");
-        try{
+         try{
             String filePath = "/btnTunHew_hover.png";
             imgIcon = new ImageIcon(getClass().getResource(filePath));
             btnTunHue.setIcon(imgIcon);
@@ -227,6 +233,26 @@ public class MainFrame extends javax.swing.JFrame {
         mainSomHai.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnTunSomActionPerformed
+
+    private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
+        try{
+            String filePath = "/btnHome_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnHome.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnHomeMouseEntered
+
+    private void btnHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseExited
+        try{
+            String filePath = "/btnHome_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnHome.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnHomeMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChefTun;

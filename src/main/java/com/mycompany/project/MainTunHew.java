@@ -340,7 +340,7 @@ public class MainTunHew extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunSomActionPerformed
 
     private void btnBoiledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoiledActionPerformed
-        MainTunHew_boiled mainTunHew_boiled = new MainTunHew_boiled();
+        MainTunHew_Boiled mainTunHew_boiled = new MainTunHew_Boiled();
         mainTunHew_boiled.setVisible(true);
         mainTunHew_boiled.pack();
         mainTunHew_boiled.setLocationRelativeTo(null);

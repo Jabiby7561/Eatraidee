@@ -151,7 +151,7 @@
     <Component class="javax.swing.JLabel" name="labelBgMain">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/mainFrame.png"/>
+          <Image iconType="3" name="/mainTunHew_boiled.png"/>
         </Property>
       </Properties>
       <AuxValues>

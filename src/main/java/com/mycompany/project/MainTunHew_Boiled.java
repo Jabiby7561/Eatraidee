@@ -6,13 +6,13 @@ import java.awt.*;
 import javax.swing.*;
 
 //--JAVA CLASS--..
-public class MainFrame extends javax.swing.JFrame {
+public class MainTunHew_Boiled extends javax.swing.JFrame {
 
     //--VARIABLE--..
     ImageIcon imgIcon;
     
     //--METHOD--..
-    public MainFrame() {
+    public MainTunHew_Boiled() {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
         this.setIconImage(AppIcon);
         initComponents();
@@ -115,7 +115,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
 
-        labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainFrame.png"))); // NOI18N
+        labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainTunHew_boiled.png"))); // NOI18N
         getContentPane().add(labelBgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

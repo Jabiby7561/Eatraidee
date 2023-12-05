@@ -2,9 +2,7 @@
 package com.mycompany.project;
 
 //--IMPORT--..
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 //--JAVA CLASS--..
 public class DbConnection {

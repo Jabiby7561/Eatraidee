@@ -2,10 +2,8 @@
 package com.mycompany.project;
 
 //--IMPORT--..
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.io.File;
-import java.io.IOException;
+import java.awt.*;
+import java.io.*;
 
 //--JAVA CLASS--..
 public class CustomFont {

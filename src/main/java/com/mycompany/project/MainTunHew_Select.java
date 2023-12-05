@@ -6,13 +6,13 @@ import java.awt.*;
 import javax.swing.*;
 
 //--JAVA CLASS--..
-public class MainTunHew_Boiled extends javax.swing.JFrame {
+public class MainTunHew_Select extends javax.swing.JFrame {
 
     //--VARIABLE--..
     ImageIcon imgIcon;
     
     //--METHOD--..
-    public MainTunHew_Boiled() {
+    public MainTunHew_Select() {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
         this.setIconImage(AppIcon);
         initComponents();
@@ -67,7 +67,12 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
                 btnSelectMouseExited(evt);
             }
         });
-        getContentPane().add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 357, -1, -1));
+        btnSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(988, 357, -1, -1));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnBack2_default.png"))); // NOI18N
         btnBack.setBorder(null);
@@ -185,7 +190,7 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
         ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/KhaoKaMoo.png"))); // NOI18N
         getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 130, 370, -1));
 
-        labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainTunHew_boiled.png"))); // NOI18N
+        labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/selectFrame.png"))); // NOI18N
         getContentPane().add(labelBgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -391,6 +396,14 @@ public class MainTunHew_Boiled extends javax.swing.JFrame {
             System.err.println(e);
         }
     }//GEN-LAST:event_btnHomeMouseExited
+
+    private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
+        ShowMenu showMenu = new ShowMenu();
+        showMenu.setVisible(true);
+        showMenu.pack();
+        showMenu.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnSelectActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ShowMenu;

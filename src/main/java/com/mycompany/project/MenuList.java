@@ -2,8 +2,7 @@
 package com.mycompany.project;
 
 //--IMPORT--..
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 //--JAVA CLASS--..
 public class MenuList {

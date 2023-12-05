@@ -93,7 +93,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, 200, 100));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 574, 200, 100));
 
         labelBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginFrame.png"))); // NOI18N
         getContentPane().add(labelBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

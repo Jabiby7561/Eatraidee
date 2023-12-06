@@ -9,8 +9,8 @@ import javax.swing.*;
 public class MainTunHew extends javax.swing.JFrame {
     
     //--VARIABLE--..
-    ImageIcon imgIcon;
-    
+    private ImageIcon imgIcon;
+
     //--METHOD--..
     public MainTunHew() {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
@@ -50,6 +50,11 @@ public class MainTunHew extends javax.swing.JFrame {
                 btnFriedMouseExited(evt);
             }
         });
+        btnFried.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFriedActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnFried, new org.netbeans.lib.awtextra.AbsoluteConstraints(701, 425, -1, -1));
 
         btnStirFried.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnStir-fried_default.png"))); // NOI18N
@@ -63,6 +68,11 @@ public class MainTunHew extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnStirFriedMouseExited(evt);
+            }
+        });
+        btnStirFried.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStirFriedActionPerformed(evt);
             }
         });
         getContentPane().add(btnStirFried, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 187, -1, -1));
@@ -157,7 +167,7 @@ public class MainTunHew extends javax.swing.JFrame {
         });
         getContentPane().add(btnTunSafe, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 200, 100));
 
-        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome.png"))); // NOI18N
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome_default.png"))); // NOI18N
         btnHome.setBorder(null);
         btnHome.setBorderPainted(false);
         btnHome.setContentAreaFilled(false);
@@ -348,10 +358,14 @@ public class MainTunHew extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunSomActionPerformed
 
     private void btnBoiledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoiledActionPerformed
-        MainTunHew_Select mainTunHew_boiled = new MainTunHew_Select();
-        mainTunHew_boiled.setVisible(true);
-        mainTunHew_boiled.pack();
-        mainTunHew_boiled.setLocationRelativeTo(null);
+        MainTunHew_Select MenuType = new MainTunHew_Select();
+        
+        MenuType.setSelectMenuType("BoiledMenu");
+        MenuType.MenuRandomize(MenuType.getSelectMenuType());
+        
+        MenuType.setVisible(true);
+        MenuType.pack();
+        MenuType.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnBoiledActionPerformed
 
@@ -374,6 +388,30 @@ public class MainTunHew extends javax.swing.JFrame {
             System.err.println(e);
         }
     }//GEN-LAST:event_btnHomeMouseExited
+
+    private void btnStirFriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStirFriedActionPerformed
+        MainTunHew_Select MenuType = new MainTunHew_Select();
+        
+        MenuType.setSelectMenuType("StirFriedMenu");
+        MenuType.MenuRandomize(MenuType.getSelectMenuType());
+        
+        MenuType.setVisible(true);
+        MenuType.pack();
+        MenuType.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnStirFriedActionPerformed
+
+    private void btnFriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFriedActionPerformed
+        MainTunHew_Select MenuType = new MainTunHew_Select();
+        
+        MenuType.setSelectMenuType("FriedMenu");
+        MenuType.MenuRandomize(MenuType.getSelectMenuType());
+        
+        MenuType.setVisible(true);
+        MenuType.pack();
+        MenuType.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnFriedActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBoiled;

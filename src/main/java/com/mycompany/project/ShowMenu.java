@@ -12,10 +12,17 @@ public class ShowMenu extends javax.swing.JFrame {
     ImageIcon imgIcon;
     
     //--METHOD--..
-    public ShowMenu() {
+    public ShowMenu(String SelectMenu) {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
         this.setIconImage(AppIcon);
         initComponents();
+        
+        String filePath = SelectMenu;               
+        imgIcon = new ImageIcon(getClass().getResource(filePath));
+        ShowMenu.setIcon(imgIcon);
+        
+        MenuList Menu = new MenuList();
+        Menu.SelectMenuList.add(SelectMenu);
     }
 
     //--APACHE's METHOD--..
@@ -151,7 +158,7 @@ public class ShowMenu extends javax.swing.JFrame {
         });
         getContentPane().add(btnTunSom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 415, -1, -1));
 
-        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome.png"))); // NOI18N
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome_default.png"))); // NOI18N
         btnHome.setBorder(null);
         btnHome.setBorderPainted(false);
         btnHome.setContentAreaFilled(false);

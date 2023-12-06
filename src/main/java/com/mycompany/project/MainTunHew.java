@@ -360,8 +360,9 @@ public class MainTunHew extends javax.swing.JFrame {
     private void btnBoiledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoiledActionPerformed
         SelectMenuFrame selectMenuFrame = new SelectMenuFrame();
         
-        selectMenuFrame.setSelectMenuType("BoiledMenu");
-        selectMenuFrame.MenuRandomize(selectMenuFrame.getSelectMenuType());
+        selectMenuFrame.setSelectFoodType("cook");
+        selectMenuFrame.setSelectMenuType("Boiled");
+        selectMenuFrame.MenuRandomize(selectMenuFrame.getSelectMenuType(),selectMenuFrame.getSelectFoodType());
         
         selectMenuFrame.setVisible(true);
         selectMenuFrame.pack();
@@ -392,8 +393,9 @@ public class MainTunHew extends javax.swing.JFrame {
     private void btnStirFriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStirFriedActionPerformed
         SelectMenuFrame selectMenuFrame = new SelectMenuFrame();
         
-        selectMenuFrame.setSelectMenuType("StirFriedMenu");
-        selectMenuFrame.MenuRandomize(selectMenuFrame.getSelectMenuType());
+        selectMenuFrame.setSelectFoodType("cook");
+        selectMenuFrame.setSelectMenuType("Stir-fried");
+        selectMenuFrame.MenuRandomize(selectMenuFrame.getSelectMenuType(),selectMenuFrame.getSelectFoodType());
         
         selectMenuFrame.setVisible(true);
         selectMenuFrame.pack();
@@ -404,8 +406,9 @@ public class MainTunHew extends javax.swing.JFrame {
     private void btnFriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFriedActionPerformed
         SelectMenuFrame selectMenuFrame = new SelectMenuFrame();
         
-        selectMenuFrame.setSelectMenuType("FriedMenu");
-        selectMenuFrame.MenuRandomize(selectMenuFrame.getSelectMenuType());
+        selectMenuFrame.setSelectFoodType("cook");
+        selectMenuFrame.setSelectMenuType("Fried");
+        selectMenuFrame.MenuRandomize(selectMenuFrame.getSelectMenuType(),selectMenuFrame.getSelectFoodType());
         
         selectMenuFrame.setVisible(true);
         selectMenuFrame.pack();

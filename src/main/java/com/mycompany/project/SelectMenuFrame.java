@@ -14,6 +14,7 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     private String SelectMenuType;
     private String SelectMenu;
     private int CheckTwiceMenu = -1;
+    private String SelectFoodType;
       
     //--METHOD--..
     public SelectMenuFrame() {
@@ -22,72 +23,31 @@ public class SelectMenuFrame extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void MenuRandomize (String Check_RandomMenu){
+    public void MenuRandomize (String Check_RandomMenu,String FuctionType){
         Random random = new Random();
-        MenuList menuList = new MenuList(); 
+        MenuList menuList = new MenuList();
         
-        if(Check_RandomMenu.equals("BoiledMenu")){
-            // random index in arraylist
-            setSelectMenu(null);
-            int randomIndex;          
-            do{
-                randomIndex = random.nextInt(menuList.BoiledMenuList.size()); 
-            }while (CheckTwiceMenu == randomIndex);
-            this.CheckTwiceMenu = randomIndex;
-            
-            // change picture
-            try{
-                String filePath = "/" + menuList.BoiledMenuList.get(randomIndex);               
-                imgIcon = new ImageIcon(getClass().getResource(filePath));
-                ShowMenu.setIcon(imgIcon);
-                
-                setSelectMenu("/" + menuList.BoiledMenuList.get(randomIndex));
-            }catch(Exception e){
-                System.err.println(e);
-            }
-        }
+        menuList.DatabseToStringToArray(Check_RandomMenu,FuctionType);
         
-        else if(Check_RandomMenu.equals("StirFriedMenu")){
-            // random index in arraylist
-            setSelectMenu(null);
-            int randomIndex;          
-            do{
-                randomIndex= random.nextInt(menuList.StirFriedMenuList.size()); 
-            }while (CheckTwiceMenu == randomIndex);
-            this.CheckTwiceMenu = randomIndex;
+        //random index in arraylist
+        setSelectMenu(null);
+        int randomIndex;          
+        do{          
+           randomIndex = random.nextInt(menuList.SelectMenuList.size());
             
-            // change picture
-            try{
-                String filePath = "/" + menuList.StirFriedMenuList.get(randomIndex);               
-                imgIcon = new ImageIcon(getClass().getResource(filePath));
-                ShowMenu.setIcon(imgIcon);
-                
-                setSelectMenu("/" + menuList.StirFriedMenuList.get(randomIndex));
-            }catch(Exception e){
-                System.err.println(e);
-            }
-        }
-        
-        else if(Check_RandomMenu.equals("FriedMenu")){
-            // random index in arraylist
-            setSelectMenu(null);
-            int randomIndex;          
-            do{
-                randomIndex= random.nextInt(menuList.FriedMenuList.size()); 
-            }while (CheckTwiceMenu == randomIndex);
-            this.CheckTwiceMenu = randomIndex;
+        }while (CheckTwiceMenu == randomIndex);
+        this.CheckTwiceMenu = randomIndex;
             
-            // change picture
-            try{
-                String filePath = "/" + menuList.FriedMenuList.get(randomIndex);               
-                imgIcon = new ImageIcon(getClass().getResource(filePath));
-                ShowMenu.setIcon(imgIcon);
-                
-                setSelectMenu("/" + menuList.FriedMenuList.get(randomIndex));
-            }catch(Exception e){
-                System.err.println(e);
-            }
-        }   
+        // change picture
+        try{
+            String filePath = menuList.SelectMenuList.get(randomIndex);               
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            ShowMenu.setIcon(imgIcon);
+            
+            setSelectMenu(menuList.SelectMenuList.get(randomIndex));
+        }catch(Exception e){
+            System.err.println(e);
+        }       
     }
 
     public String getSelectMenuType() {
@@ -105,6 +65,16 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     public void setSelectMenu(String SelectMenu) {
         this.SelectMenu = SelectMenu;
     }
+
+    public String getSelectFoodType() {
+        return SelectFoodType;
+    }
+
+    public void setSelectFoodType(String SelectFoodType) {
+        this.SelectFoodType = SelectFoodType;
+    }
+    
+    
        
     //--APACHE's METHOD--..
     @SuppressWarnings("unchecked")
@@ -499,7 +469,7 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSelectActionPerformed
 
     private void btnsSkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsSkipActionPerformed
-        MenuRandomize(SelectMenuType);
+        MenuRandomize(SelectMenuType,SelectFoodType);
     }//GEN-LAST:event_btnsSkipActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

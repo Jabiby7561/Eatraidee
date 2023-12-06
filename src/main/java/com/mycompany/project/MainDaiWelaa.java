@@ -166,7 +166,7 @@ public class MainDaiWelaa extends javax.swing.JFrame {
         });
         getContentPane().add(btnTunSafe, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 200, 100));
 
-        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome.png"))); // NOI18N
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome_default.png"))); // NOI18N
         btnHome.setBorder(null);
         btnHome.setBorderPainted(false);
         btnHome.setContentAreaFilled(false);

@@ -7,7 +7,7 @@ import java.util.Random;
 import javax.swing.*;
 
 //--JAVA CLASS--..
-public class SelectMenuFrame extends javax.swing.JFrame {
+public class SelectTypeFrame extends javax.swing.JFrame {
 
     //--VARIABLE--..
     private ImageIcon imgIcon;
@@ -17,39 +17,115 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     private int CheckTwiceMenu = -1;
       
     //--METHOD--..
-    public SelectMenuFrame() {
+    public SelectTypeFrame() {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
         this.setIconImage(AppIcon);
         initComponents();
     }
     
-    public void MenuRandomize (String Check_RandomMenu,String FuctionType){
+    public void MenuRandomize_Taste(String Check_RandomMenu, String FuctionType){
         Random random = new Random();
-        MenuList menuList = new MenuList();
+        TypeList TypeList = new TypeList();
         
-        menuList.DatabseToStringToArray(Check_RandomMenu,FuctionType);
+        //menuList.DatabseToStringToArray(Check_RandomMenu,FuctionType);
         
         //random index in arraylist
         setSelectMenu(null);
         int randomIndex;          
         do{          
-           randomIndex = random.nextInt(menuList.SelectMenuList.size());
+           randomIndex = random.nextInt(TypeList.SelectTasteList.size());
             
         }while (CheckTwiceMenu == randomIndex);
         this.CheckTwiceMenu = randomIndex;
             
         // change picture
         try{
-            String filePath = menuList.SelectMenuList.get(randomIndex);               
+            String filePath = "/pic" + TypeList.SelectTasteList.get(randomIndex) + ".png";               
             imgIcon = new ImageIcon(getClass().getResource(filePath));
             ShowMenu.setIcon(imgIcon);
             
-            setSelectMenu(menuList.SelectMenuList.get(randomIndex));
+            setSelectMenu(TypeList.SelectTasteList.get(randomIndex));
         }catch(Exception e){
             System.err.println(e);
         }       
     }
 
+    public void MenuRandomize_Cook(String Check_RandomMenu, String FuctionType){
+        Random random = new Random();
+        TypeList TypeList = new TypeList();
+        
+        //random index in arraylist
+        setSelectMenu(null);
+        int randomIndex;          
+        do{          
+           randomIndex = random.nextInt(TypeList.SelectCookList.size());
+            
+        }while (CheckTwiceMenu == randomIndex);
+        this.CheckTwiceMenu = randomIndex;
+            
+        // change picture
+        try{
+            String filePath = "/pic" + TypeList.SelectCookList.get(randomIndex) + ".png";               
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            ShowMenu.setIcon(imgIcon);
+            
+            setSelectMenu(TypeList.SelectCookList.get(randomIndex));
+        }catch(Exception e){
+            System.err.println(e);
+        }       
+    }
+    
+    public void MenuRandomize_Material(String Check_RandomMenu, String FuctionType){
+        Random random = new Random();
+        TypeList TypeList = new TypeList();
+        
+        //random index in arraylist
+        setSelectMenu(null);
+        int randomIndex;          
+        do{          
+           randomIndex = random.nextInt(TypeList.SelectMaterialList.size());
+            
+        }while (CheckTwiceMenu == randomIndex);
+        this.CheckTwiceMenu = randomIndex;
+            
+        // change picture
+        try{
+            String filePath = "/pic" + TypeList.SelectMaterialList.get(randomIndex) + ".png";               
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            ShowMenu.setIcon(imgIcon);
+            
+            setSelectMenu(TypeList.SelectMaterialList.get(randomIndex));
+        }catch(Exception e){
+            System.err.println(e);
+        }       
+    }
+    
+    public void MenuRandomize_Type(String Check_RandomMenu, String FuctionType){
+        Random random = new Random();
+        TypeList TypeList = new TypeList();
+        
+        //random index in arraylist
+        setSelectMenu(null);
+        int randomIndex;          
+        do{          
+           randomIndex = random.nextInt(TypeList.SelectTypeList.size());
+            
+        }while (CheckTwiceMenu == randomIndex);
+        this.CheckTwiceMenu = randomIndex;
+            
+        // change picture
+        try{
+            String filePath = "/pic" + TypeList.SelectTypeList.get(randomIndex) + ".png";               
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            ShowMenu.setIcon(imgIcon);
+            
+            setSelectMenu(TypeList.SelectTypeList.get(randomIndex));
+        }catch(Exception e){
+            System.err.println(e);
+        }
+        
+    }
+    
     public String getSelectMenuType() {
         return SelectMenuType;
     }
@@ -73,7 +149,7 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     public void setSelectMenu(String SelectMenu) {
         this.SelectMenu = SelectMenu;
     }
-       
+    
     //--APACHE's METHOD--..
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -113,7 +189,7 @@ public class SelectMenuFrame extends javax.swing.JFrame {
                 btnsSkipActionPerformed(evt);
             }
         });
-        getContentPane().add(btnsSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 360, -1, -1));
+        getContentPane().add(btnsSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, -1, -1));
 
         btnSelect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnSelect_default.png"))); // NOI18N
         btnSelect.setBorder(null);
@@ -133,7 +209,7 @@ public class SelectMenuFrame extends javax.swing.JFrame {
                 btnSelectActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(988, 357, -1, -1));
+        getContentPane().add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 357, -1, -1));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnBack2_default.png"))); // NOI18N
         btnBack.setBorder(null);
@@ -248,10 +324,10 @@ public class SelectMenuFrame extends javax.swing.JFrame {
         });
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
 
-        ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/KhaoKaMoo.png"))); // NOI18N
-        getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 130, -1, -1));
+        ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picmellow.png"))); // NOI18N
+        getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 210, -1, -1));
 
-        labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SelectMenuFrame.png"))); // NOI18N
+        labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SelectTypeFrame.png"))); // NOI18N
         getContentPane().add(labelBgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -383,10 +459,10 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackMouseExited
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        MainTunHew mainTunHew = new MainTunHew();
-        mainTunHew.setVisible(true);
-        mainTunHew.pack();
-        mainTunHew.setLocationRelativeTo(null);
+        MainDaiWelaa mainDaiWelaa = new MainDaiWelaa();
+        mainDaiWelaa.setVisible(true);
+        mainDaiWelaa.pack();
+        mainDaiWelaa.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -459,15 +535,33 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeMouseExited
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
-        ShowMenu showMenu = new ShowMenu(getSelectMenu());
-        showMenu.setVisible(true);
-        showMenu.pack();
-        showMenu.setLocationRelativeTo(null);
+        SelectMenuFrame selectMenuFrame = new SelectMenuFrame();
+        
+        selectMenuFrame.MenuRandomize(getSelectMenuType(), getSelectFoodType());
+        
+        selectMenuFrame.setVisible(true);
+        selectMenuFrame.pack();
+        selectMenuFrame.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnSelectActionPerformed
 
     private void btnsSkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsSkipActionPerformed
-        MenuRandomize(SelectMenuType,SelectFoodType);
+        switch (getSelectFoodType()) {
+            case "taste":
+                MenuRandomize_Taste(getSelectMenuType(), getSelectFoodType());
+                break;
+            case "cook":
+                MenuRandomize_Cook(getSelectMenuType(), getSelectFoodType());
+                break;
+            case "material":
+                MenuRandomize_Material(getSelectMenuType(), getSelectFoodType());
+                break;
+            case "type":
+                MenuRandomize_Type(getSelectMenuType(), getSelectFoodType());
+                break;
+            default:
+                break;
+        }
     }//GEN-LAST:event_btnsSkipActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

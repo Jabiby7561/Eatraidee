@@ -51,6 +51,11 @@ public class MainDaiWelaa extends javax.swing.JFrame {
                 btnTypeMouseExited(evt);
             }
         });
+        btnType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTypeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnType, new org.netbeans.lib.awtextra.AbsoluteConstraints(882, 413, -1, -1));
 
         btnMaterial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnMaterial_default.png"))); // NOI18N
@@ -64,6 +69,11 @@ public class MainDaiWelaa extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnMaterialMouseExited(evt);
+            }
+        });
+        btnMaterial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMaterialActionPerformed(evt);
             }
         });
         getContentPane().add(btnMaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 413, -1, -1));
@@ -81,6 +91,11 @@ public class MainDaiWelaa extends javax.swing.JFrame {
                 btnCookMouseExited(evt);
             }
         });
+        btnCook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCookActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCook, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 180, -1, -1));
 
         btnTaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTaste_default.png"))); // NOI18N
@@ -94,6 +109,11 @@ public class MainDaiWelaa extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnTasteMouseExited(evt);
+            }
+        });
+        btnTaste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTasteActionPerformed(evt);
             }
         });
         getContentPane().add(btnTaste, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 182, -1, -1));
@@ -397,6 +417,58 @@ public class MainDaiWelaa extends javax.swing.JFrame {
             System.err.println(e);
         }
     }//GEN-LAST:event_btnHomeMouseExited
+
+    private void btnTasteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTasteActionPerformed
+        SelectTypeFrame selectTypeFrame = new SelectTypeFrame();
+        
+        selectTypeFrame.setSelectFoodType("taste");
+        selectTypeFrame.setSelectMenuType(null);
+        selectTypeFrame.MenuRandomize_Taste(selectTypeFrame.getSelectMenuType(),selectTypeFrame.getSelectFoodType());
+        
+        selectTypeFrame.setVisible(true);
+        selectTypeFrame.pack();
+        selectTypeFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnTasteActionPerformed
+
+    private void btnCookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCookActionPerformed
+        SelectTypeFrame selectTypeFrame = new SelectTypeFrame();
+        
+        selectTypeFrame.setSelectFoodType("cook");
+        selectTypeFrame.setSelectMenuType(null);
+        selectTypeFrame.MenuRandomize_Cook(selectTypeFrame.getSelectMenuType(),selectTypeFrame.getSelectFoodType());
+        
+        selectTypeFrame.setVisible(true);
+        selectTypeFrame.pack();
+        selectTypeFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnCookActionPerformed
+
+    private void btnMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaterialActionPerformed
+        SelectTypeFrame selectTypeFrame = new SelectTypeFrame();
+        
+        selectTypeFrame.setSelectFoodType("material");
+        selectTypeFrame.setSelectMenuType(null);
+        selectTypeFrame.MenuRandomize_Material(selectTypeFrame.getSelectMenuType(),selectTypeFrame.getSelectFoodType());
+        
+        selectTypeFrame.setVisible(true);
+        selectTypeFrame.pack();
+        selectTypeFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnMaterialActionPerformed
+
+    private void btnTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTypeActionPerformed
+        SelectTypeFrame selectTypeFrame = new SelectTypeFrame();
+        
+        selectTypeFrame.setSelectFoodType("type");
+        selectTypeFrame.setSelectMenuType(null);
+        selectTypeFrame.MenuRandomize_Type(selectTypeFrame.getSelectMenuType(),selectTypeFrame.getSelectFoodType());
+        
+        selectTypeFrame.setVisible(true);
+        selectTypeFrame.pack();
+        selectTypeFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnTypeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChefTun;

@@ -10,7 +10,8 @@ import java.util.*;
 //--JAVA CLASS--..
 public class MenuList {
     public ArrayList<String> SelectMenuList = new ArrayList<>();
-
+    
+    //--METHOD--..
     public void DatabseToStringToArray(String CheckSelectedMenu,String FuctionType){
         Connection con = DbConnection.connect();
         PreparedStatement cursor = null;

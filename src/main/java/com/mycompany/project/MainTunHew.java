@@ -358,14 +358,14 @@ public class MainTunHew extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunSomActionPerformed
 
     private void btnBoiledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoiledActionPerformed
-        MainTunHew_Select MenuType = new MainTunHew_Select();
+        MainTunHew_Select mainTunHew_Select = new MainTunHew_Select();
         
-        MenuType.setSelectMenuType("BoiledMenu");
-        MenuType.MenuRandomize(MenuType.getSelectMenuType());
+        mainTunHew_Select.setSelectMenuType("BoiledMenu");
+        mainTunHew_Select.MenuRandomize(mainTunHew_Select.getSelectMenuType());
         
-        MenuType.setVisible(true);
-        MenuType.pack();
-        MenuType.setLocationRelativeTo(null);
+        mainTunHew_Select.setVisible(true);
+        mainTunHew_Select.pack();
+        mainTunHew_Select.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnBoiledActionPerformed
 
@@ -390,26 +390,26 @@ public class MainTunHew extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeMouseExited
 
     private void btnStirFriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStirFriedActionPerformed
-        MainTunHew_Select MenuType = new MainTunHew_Select();
+        MainTunHew_Select mainTunHew_Select = new MainTunHew_Select();
         
-        MenuType.setSelectMenuType("StirFriedMenu");
-        MenuType.MenuRandomize(MenuType.getSelectMenuType());
+        mainTunHew_Select.setSelectMenuType("StirFriedMenu");
+        mainTunHew_Select.MenuRandomize(mainTunHew_Select.getSelectMenuType());
         
-        MenuType.setVisible(true);
-        MenuType.pack();
-        MenuType.setLocationRelativeTo(null);
+        mainTunHew_Select.setVisible(true);
+        mainTunHew_Select.pack();
+        mainTunHew_Select.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnStirFriedActionPerformed
 
     private void btnFriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFriedActionPerformed
-        MainTunHew_Select MenuType = new MainTunHew_Select();
+        MainTunHew_Select mainTunHew_Select = new MainTunHew_Select();
         
-        MenuType.setSelectMenuType("FriedMenu");
-        MenuType.MenuRandomize(MenuType.getSelectMenuType());
+        mainTunHew_Select.setSelectMenuType("FriedMenu");
+        mainTunHew_Select.MenuRandomize(mainTunHew_Select.getSelectMenuType());
         
-        MenuType.setVisible(true);
-        MenuType.pack();
-        MenuType.setLocationRelativeTo(null);
+        mainTunHew_Select.setVisible(true);
+        mainTunHew_Select.pack();
+        mainTunHew_Select.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnFriedActionPerformed
 

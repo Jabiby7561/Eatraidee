@@ -15,6 +15,16 @@ public class MenuList {
             "SukiyakiGai.png","SukiyakiTaLay.png","SukiyakiMoo.png","KuayTiewMooTomYum.png",
             "YumMama.png"));
     
-    public ArrayList<String> StirFriedMenuList = new ArrayList<>(Arrays.asList("wow"));
-    public ArrayList<String> FriedMenuList = new ArrayList<>(Arrays.asList("wow"));
+    public ArrayList<String> StirFriedMenuList = new ArrayList<>(Arrays.asList(
+            "KhamMooKrob.png","KhaoGaiSoyaYinpun.png","KhaoPlaSoyaYinpun.png","KhaoPadPongKangKariGoong.png",
+            "KhaoPadMoo.png","KhaoNaMooKaiAunSen.png","KhaoMooSoyaYinpun.png","KhaoPadGai.png",
+            "NamTokMoo.png","PadSeeEwMoo.png","PadThaiGai.png","PadThaiMoo.png",
+            "KraPaoGai.png","KraPaoTaLay.png","KraPaoMoo.png","KraPaoMooKrob.png",
+            "LarbGai.png","LarbMoo.png"));
+
+    public ArrayList<String> FriedMenuList = new ArrayList<>(Arrays.asList(
+            "KhaoGaiTodKangKari.png","KhaoPlaTodKangKari.png","KhaoManGaiTod.png","KhaoMooTod.png",
+            "KhaoMooTodKangKari.png","Katsudon.png"));
+    
+    
 }

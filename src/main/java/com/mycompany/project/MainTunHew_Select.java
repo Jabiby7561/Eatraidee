@@ -24,24 +24,24 @@ public class MainTunHew_Select extends javax.swing.JFrame {
     
     public void MenuRandomize (String Check_RandomMenu){
         Random random = new Random();
-        MenuList Menu = new MenuList(); 
+        MenuList menuList = new MenuList(); 
         
         if(Check_RandomMenu.equals("BoiledMenu")){
             // random index in arraylist
             setSelectMenu(null);
             int randomIndex;          
             do{
-                randomIndex= random.nextInt(Menu.BoiledMenuList.size()); 
+                randomIndex = random.nextInt(menuList.BoiledMenuList.size()); 
             }while (CheckTwiceMenu == randomIndex);
             this.CheckTwiceMenu = randomIndex;
             
             // change picture
             try{
-                String filePath = "/" + Menu.BoiledMenuList.get(randomIndex);               
+                String filePath = "/" + menuList.BoiledMenuList.get(randomIndex);               
                 imgIcon = new ImageIcon(getClass().getResource(filePath));
                 ShowMenu.setIcon(imgIcon);
                 
-                setSelectMenu("/" + Menu.BoiledMenuList.get(randomIndex));
+                setSelectMenu("/" + menuList.BoiledMenuList.get(randomIndex));
             }catch(Exception e){
                 System.err.println(e);
             }
@@ -52,17 +52,17 @@ public class MainTunHew_Select extends javax.swing.JFrame {
             setSelectMenu(null);
             int randomIndex;          
             do{
-                randomIndex= random.nextInt(Menu.StirFriedMenuList.size()); 
+                randomIndex= random.nextInt(menuList.StirFriedMenuList.size()); 
             }while (CheckTwiceMenu == randomIndex);
             this.CheckTwiceMenu = randomIndex;
             
             // change picture
             try{
-                String filePath = "/" + Menu.StirFriedMenuList.get(randomIndex);               
+                String filePath = "/" + menuList.StirFriedMenuList.get(randomIndex);               
                 imgIcon = new ImageIcon(getClass().getResource(filePath));
                 ShowMenu.setIcon(imgIcon);
                 
-                setSelectMenu("/" + Menu.StirFriedMenuList.get(randomIndex));
+                setSelectMenu("/" + menuList.StirFriedMenuList.get(randomIndex));
             }catch(Exception e){
                 System.err.println(e);
             }
@@ -73,17 +73,17 @@ public class MainTunHew_Select extends javax.swing.JFrame {
             setSelectMenu(null);
             int randomIndex;          
             do{
-                randomIndex= random.nextInt(Menu.FriedMenuList.size()); 
+                randomIndex= random.nextInt(menuList.FriedMenuList.size()); 
             }while (CheckTwiceMenu == randomIndex);
             this.CheckTwiceMenu = randomIndex;
             
             // change picture
             try{
-                String filePath = "/" + Menu.FriedMenuList.get(randomIndex);               
+                String filePath = "/" + menuList.FriedMenuList.get(randomIndex);               
                 imgIcon = new ImageIcon(getClass().getResource(filePath));
                 ShowMenu.setIcon(imgIcon);
                 
-                setSelectMenu("/" + Menu.FriedMenuList.get(randomIndex));
+                setSelectMenu("/" + menuList.FriedMenuList.get(randomIndex));
             }catch(Exception e){
                 System.err.println(e);
             }

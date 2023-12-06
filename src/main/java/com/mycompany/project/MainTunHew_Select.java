@@ -3,21 +3,110 @@ package com.mycompany.project;
 
 //--IMPORT--..
 import java.awt.*;
+import java.util.Random;
 import javax.swing.*;
 
 //--JAVA CLASS--..
 public class MainTunHew_Select extends javax.swing.JFrame {
 
     //--VARIABLE--..
-    ImageIcon imgIcon;
-    
+    private ImageIcon imgIcon;
+    private String SelectMenuType;
+    private String SelectMenu;
+    private int CheckTwiceMenu = -1;
+      
     //--METHOD--..
     public MainTunHew_Select() {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
         this.setIconImage(AppIcon);
         initComponents();
     }
+    
+    public void MenuRandomize (String Check_RandomMenu){
+        Random random = new Random();
+        MenuList Menu = new MenuList(); 
+        
+        if(Check_RandomMenu.equals("BoiledMenu")){
+            // random index in arraylist
+            setSelectMenu(null);
+            int randomIndex;          
+            do{
+                randomIndex= random.nextInt(Menu.BoiledMenuList.size()); 
+            }while (CheckTwiceMenu == randomIndex);
+            this.CheckTwiceMenu = randomIndex;
+            
+            // change picture
+            try{
+                String filePath = "/" + Menu.BoiledMenuList.get(randomIndex);               
+                imgIcon = new ImageIcon(getClass().getResource(filePath));
+                ShowMenu.setIcon(imgIcon);
+                
+                setSelectMenu("/" + Menu.BoiledMenuList.get(randomIndex));
+            }catch(Exception e){
+                System.err.println(e);
+            }
+        }
+        
+        else if(Check_RandomMenu.equals("StirFriedMenu")){
+            // random index in arraylist
+            setSelectMenu(null);
+            int randomIndex;          
+            do{
+                randomIndex= random.nextInt(Menu.StirFriedMenuList.size()); 
+            }while (CheckTwiceMenu == randomIndex);
+            this.CheckTwiceMenu = randomIndex;
+            
+            // change picture
+            try{
+                String filePath = "/" + Menu.StirFriedMenuList.get(randomIndex);               
+                imgIcon = new ImageIcon(getClass().getResource(filePath));
+                ShowMenu.setIcon(imgIcon);
+                
+                setSelectMenu("/" + Menu.StirFriedMenuList.get(randomIndex));
+            }catch(Exception e){
+                System.err.println(e);
+            }
+        }
+        
+        else if(Check_RandomMenu.equals("FriedMenu")){
+            // random index in arraylist
+            setSelectMenu(null);
+            int randomIndex;          
+            do{
+                randomIndex= random.nextInt(Menu.FriedMenuList.size()); 
+            }while (CheckTwiceMenu == randomIndex);
+            this.CheckTwiceMenu = randomIndex;
+            
+            // change picture
+            try{
+                String filePath = "/" + Menu.FriedMenuList.get(randomIndex);               
+                imgIcon = new ImageIcon(getClass().getResource(filePath));
+                ShowMenu.setIcon(imgIcon);
+                
+                setSelectMenu("/" + Menu.FriedMenuList.get(randomIndex));
+            }catch(Exception e){
+                System.err.println(e);
+            }
+        }  
+        
+    }
 
+    public String getSelectMenuType() {
+        return SelectMenuType;
+    }
+
+    public void setSelectMenuType(String SelectMenuType) {
+        this.SelectMenuType = SelectMenuType;
+    }
+
+    public String getSelectMenu() {
+        return SelectMenu;
+    }
+
+    public void setSelectMenu(String SelectMenu) {
+        this.SelectMenu = SelectMenu;
+    }
+       
     //--APACHE's METHOD--..
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -50,6 +139,11 @@ public class MainTunHew_Select extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnsSkipMouseExited(evt);
+            }
+        });
+        btnsSkip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsSkipActionPerformed(evt);
             }
         });
         getContentPane().add(btnsSkip, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 360, -1, -1));
@@ -167,7 +261,7 @@ public class MainTunHew_Select extends javax.swing.JFrame {
         });
         getContentPane().add(btnTunSom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 415, -1, -1));
 
-        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome.png"))); // NOI18N
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnHome_default.png"))); // NOI18N
         btnHome.setBorder(null);
         btnHome.setBorderPainted(false);
         btnHome.setContentAreaFilled(false);
@@ -188,7 +282,7 @@ public class MainTunHew_Select extends javax.swing.JFrame {
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
 
         ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/KhaoKaMoo.png"))); // NOI18N
-        getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 130, 370, -1));
+        getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 130, -1, -1));
 
         labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/selectFrame.png"))); // NOI18N
         getContentPane().add(labelBgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -398,12 +492,16 @@ public class MainTunHew_Select extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeMouseExited
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
-        ShowMenu showMenu = new ShowMenu();
+        ShowMenu showMenu = new ShowMenu(getSelectMenu());
         showMenu.setVisible(true);
         showMenu.pack();
         showMenu.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnSelectActionPerformed
+
+    private void btnsSkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsSkipActionPerformed
+        MenuRandomize(SelectMenuType);
+    }//GEN-LAST:event_btnsSkipActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ShowMenu;

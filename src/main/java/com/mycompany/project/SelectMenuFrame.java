@@ -467,7 +467,8 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSelectActionPerformed
 
     private void btnsSkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsSkipActionPerformed
-        MenuRandomize(SelectMenuType,SelectFoodType);
+        MenuRandomize(getSelectMenuType(),getSelectFoodType());
+        
     }//GEN-LAST:event_btnsSkipActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

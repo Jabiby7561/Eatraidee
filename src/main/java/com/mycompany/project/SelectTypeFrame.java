@@ -37,7 +37,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             
         }while (CheckTwiceMenu == randomIndex);
         this.CheckTwiceMenu = randomIndex;
-            
+        
         // change picture
         try{
             String filePath = "/pic" + TypeList.SelectTasteList.get(randomIndex) + ".png";               
@@ -120,11 +120,13 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             ShowMenu.setIcon(imgIcon);
             
             setSelectMenu(TypeList.SelectTypeList.get(randomIndex));
+            
         }catch(Exception e){
             System.err.println(e);
         }
-        
     }
+    
+    
     
     public String getSelectMenuType() {
         return SelectMenuType;
@@ -536,9 +538,8 @@ public class SelectTypeFrame extends javax.swing.JFrame {
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
         SelectMenuFrame selectMenuFrame = new SelectMenuFrame();
-        
-        selectMenuFrame.MenuRandomize(getSelectMenuType(), getSelectFoodType());
-        
+         
+        selectMenuFrame.MenuRandomize(getSelectMenu(),getSelectFoodType());   
         selectMenuFrame.setVisible(true);
         selectMenuFrame.pack();
         selectMenuFrame.setLocationRelativeTo(null);
@@ -546,6 +547,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSelectActionPerformed
 
     private void btnsSkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsSkipActionPerformed
+        
         switch (getSelectFoodType()) {
             case "taste":
                 MenuRandomize_Taste(getSelectMenuType(), getSelectFoodType());
@@ -562,6 +564,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             default:
                 break;
         }
+        System.out.println(getSelectMenuType() + getSelectFoodType());
     }//GEN-LAST:event_btnsSkipActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

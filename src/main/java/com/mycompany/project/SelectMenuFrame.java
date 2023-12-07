@@ -383,10 +383,10 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackMouseExited
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        MainTunHew mainTunHew = new MainTunHew();
-        mainTunHew.setVisible(true);
-        mainTunHew.pack();
-        mainTunHew.setLocationRelativeTo(null);
+        MainFrame mainFrame = new MainFrame();
+        mainFrame.setVisible(true);
+        mainFrame.pack();
+        mainFrame.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 

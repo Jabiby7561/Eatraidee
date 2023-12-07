@@ -26,11 +26,10 @@ public class SelectTypeFrame extends javax.swing.JFrame {
     public void MenuRandomize_Taste(String Check_RandomMenu, String FuctionType){
         Random random = new Random();
         TypeList TypeList = new TypeList();
-        
-        //menuList.DatabseToStringToArray(Check_RandomMenu,FuctionType);
-        
+               
         //random index in arraylist
         setSelectMenu(null);
+        setSelectMenuType(null);
         int randomIndex;          
         do{          
            randomIndex = random.nextInt(TypeList.SelectTasteList.size());
@@ -45,6 +44,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             ShowMenu.setIcon(imgIcon);
             
             setSelectMenu(TypeList.SelectTasteList.get(randomIndex));
+            setSelectMenuType(TypeList.SelectTasteList.get(randomIndex));
         }catch(Exception e){
             System.err.println(e);
         }       
@@ -56,6 +56,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         
         //random index in arraylist
         setSelectMenu(null);
+        setSelectMenuType(null);
         int randomIndex;          
         do{          
            randomIndex = random.nextInt(TypeList.SelectCookList.size());
@@ -70,6 +71,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             ShowMenu.setIcon(imgIcon);
             
             setSelectMenu(TypeList.SelectCookList.get(randomIndex));
+            setSelectMenuType(TypeList.SelectCookList.get(randomIndex));
         }catch(Exception e){
             System.err.println(e);
         }       
@@ -81,6 +83,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         
         //random index in arraylist
         setSelectMenu(null);
+        setSelectMenuType(null);
         int randomIndex;          
         do{          
            randomIndex = random.nextInt(TypeList.SelectMaterialList.size());
@@ -95,6 +98,8 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             ShowMenu.setIcon(imgIcon);
             
             setSelectMenu(TypeList.SelectMaterialList.get(randomIndex));
+            setSelectMenuType(TypeList.SelectMaterialList.get(randomIndex));
+       
         }catch(Exception e){
             System.err.println(e);
         }       
@@ -106,6 +111,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         
         //random index in arraylist
         setSelectMenu(null);
+        setSelectMenuType(null);
         int randomIndex;          
         do{          
            randomIndex = random.nextInt(TypeList.SelectTypeList.size());
@@ -120,7 +126,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             ShowMenu.setIcon(imgIcon);
             
             setSelectMenu(TypeList.SelectTypeList.get(randomIndex));
-            
+            setSelectMenuType(TypeList.SelectTypeList.get(randomIndex));
         }catch(Exception e){
             System.err.println(e);
         }
@@ -538,8 +544,12 @@ public class SelectTypeFrame extends javax.swing.JFrame {
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
         SelectMenuFrame selectMenuFrame = new SelectMenuFrame();
-         
-        selectMenuFrame.MenuRandomize(getSelectMenu(),getSelectFoodType());   
+        
+        
+        selectMenuFrame.MenuRandomize(getSelectMenu(),getSelectFoodType());
+        selectMenuFrame.setSelectMenuType(getSelectMenu());
+        selectMenuFrame.setSelectFoodType(getSelectFoodType());
+        
         selectMenuFrame.setVisible(true);
         selectMenuFrame.pack();
         selectMenuFrame.setLocationRelativeTo(null);
@@ -547,7 +557,6 @@ public class SelectTypeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSelectActionPerformed
 
     private void btnsSkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsSkipActionPerformed
-        
         switch (getSelectFoodType()) {
             case "taste":
                 MenuRandomize_Taste(getSelectMenuType(), getSelectFoodType());
@@ -564,7 +573,6 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             default:
                 break;
         }
-        System.out.println(getSelectMenuType() + getSelectFoodType());
     }//GEN-LAST:event_btnsSkipActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

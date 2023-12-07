@@ -423,6 +423,7 @@ public class MainDaiWelaa extends javax.swing.JFrame {
         
         selectTypeFrame.setSelectFoodType("taste");
         selectTypeFrame.setSelectMenuType(null);
+        
         selectTypeFrame.MenuRandomize_Taste(selectTypeFrame.getSelectMenuType(),selectTypeFrame.getSelectFoodType());
         
         selectTypeFrame.setVisible(true);

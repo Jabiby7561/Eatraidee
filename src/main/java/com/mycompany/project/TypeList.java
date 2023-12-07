@@ -12,7 +12,7 @@ public class TypeList {
             "Spicy", "Mellow"));
     
     public static ArrayList<String> SelectCookList = new ArrayList<>(Arrays.asList(
-            "Boiled", "Stir-fry", "Fried"));
+            "Boiled", "Stir-fried", "Fried"));
     
     public static ArrayList<String> SelectMaterialList = new ArrayList<>(Arrays.asList(
             "Pork", "Chicken", "Seafood"));

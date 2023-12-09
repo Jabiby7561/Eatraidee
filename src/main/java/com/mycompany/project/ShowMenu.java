@@ -10,9 +10,10 @@ public class ShowMenu extends javax.swing.JFrame {
 
     //--VARIABLE--..
     ImageIcon imgIcon;
-    
+    private String selectedMenu = null;
     //--METHOD--..
     public ShowMenu(String SelectMenu) {
+        this.selectedMenu = SelectMenu;
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
         this.setIconImage(AppIcon);
         initComponents();
@@ -23,6 +24,8 @@ public class ShowMenu extends javax.swing.JFrame {
         
         MenuList Menu = new MenuList();
         Menu.SelectMenuList.add(SelectMenu);
+        
+        System.out.println("Selected Menu : "+SelectMenu); //This is Selected Menu.. Final Result
     }
 
     //--APACHE's METHOD--..
@@ -369,6 +372,7 @@ public class ShowMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNextMouseExited
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+        // Send selectedMenu variable to save database class
         FinishFrame finishFrame = new FinishFrame();
         finishFrame.setVisible(true);
         finishFrame.pack();

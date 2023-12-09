@@ -15,7 +15,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
     private String SelectFoodType;
     private String SelectMenu;
     private int CheckTwiceMenu = -1;
-      
+    
     //--METHOD--..
     public SelectTypeFrame() {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
@@ -25,7 +25,6 @@ public class SelectTypeFrame extends javax.swing.JFrame {
     
     public void MenuRandomize_Taste(String Check_RandomMenu, String FuctionType){
         Random random = new Random();
-        TypeList TypeList = new TypeList();
                
         //random index in arraylist
         setSelectMenu(null);
@@ -52,7 +51,6 @@ public class SelectTypeFrame extends javax.swing.JFrame {
 
     public void MenuRandomize_Cook(String Check_RandomMenu, String FuctionType){
         Random random = new Random();
-        TypeList TypeList = new TypeList();
         
         //random index in arraylist
         setSelectMenu(null);
@@ -79,7 +77,6 @@ public class SelectTypeFrame extends javax.swing.JFrame {
     
     public void MenuRandomize_Material(String Check_RandomMenu, String FuctionType){
         Random random = new Random();
-        TypeList TypeList = new TypeList();
         
         //random index in arraylist
         setSelectMenu(null);
@@ -107,7 +104,6 @@ public class SelectTypeFrame extends javax.swing.JFrame {
     
     public void MenuRandomize_Type(String Check_RandomMenu, String FuctionType){
         Random random = new Random();
-        TypeList TypeList = new TypeList();
         
         //random index in arraylist
         setSelectMenu(null);
@@ -131,8 +127,6 @@ public class SelectTypeFrame extends javax.swing.JFrame {
             System.err.println(e);
         }
     }
-    
-    
     
     public String getSelectMenuType() {
         return SelectMenuType;
@@ -558,20 +552,12 @@ public class SelectTypeFrame extends javax.swing.JFrame {
 
     private void btnsSkipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsSkipActionPerformed
         switch (getSelectFoodType()) {
-            case "taste":
-                MenuRandomize_Taste(getSelectMenuType(), getSelectFoodType());
-                break;
-            case "cook":
-                MenuRandomize_Cook(getSelectMenuType(), getSelectFoodType());
-                break;
-            case "material":
-                MenuRandomize_Material(getSelectMenuType(), getSelectFoodType());
-                break;
-            case "type":
-                MenuRandomize_Type(getSelectMenuType(), getSelectFoodType());
-                break;
-            default:
-                break;
+            case "taste" -> MenuRandomize_Taste(getSelectMenuType(), getSelectFoodType());
+            case "cook" -> MenuRandomize_Cook(getSelectMenuType(), getSelectFoodType());
+            case "material" -> MenuRandomize_Material(getSelectMenuType(), getSelectFoodType());
+            case "type" -> MenuRandomize_Type(getSelectMenuType(), getSelectFoodType());
+            default -> {
+            }
         }
     }//GEN-LAST:event_btnsSkipActionPerformed
 

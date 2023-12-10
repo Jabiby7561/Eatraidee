@@ -3,6 +3,10 @@ package com.mycompany.project;
 
 //--IMPORT--..
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 //--JAVA CLASS--..
@@ -11,15 +15,134 @@ public class MainSomHai extends javax.swing.JFrame {
     //--VARIABLE--..
     ImageIcon imgIcon;
     CustomFont customFont;
+    private ArrayList<String> txtinslot = new ArrayList<>();
     
     //--METHOD--..
     public MainSomHai() {
         Image AppIcon = new ImageIcon(this.getClass().getResource("/Logo_Icon.png")).getImage();
         this.setIconImage(AppIcon);
         initComponents();
+        SlotMachine("ShowText");
         showTextFeild();
     }
 
+    
+    public void SlotMachine(String operation){
+        customFont = new CustomFont();
+        Font font = customFont.setFontFile(22);
+        
+        ArrayList<Integer> randomindexlist = new ArrayList<>();
+        
+        int randomIndex = 0;
+        
+        if (operation.equals("ShowText")){
+            //System.out.println(txtinslot.size());
+            txtSlot1.setFont(font);  
+            txtSlot2.setFont(font);
+            txtSlot3.setFont(font);  
+            txtSlot4.setFont(font);  
+            txtSlot5.setFont(font); 
+            ChangeTextSlotMachine();
+        }
+        
+        if (operation.equals("AddText")){
+            if (txtinslot.size() < 5){
+                txtinslot.add(txtFoodname.getText());
+                
+            }else{
+                  JOptionPane.showMessageDialog(this, "The Limited is 5 Menu", "Error", 
+                    JOptionPane.WARNING_MESSAGE);     
+            }
+            txtFoodname.setText(null);
+            ChangeTextSlotMachine();
+        }
+        
+        
+        if (operation.equals("RandomText")){
+            //txtSlotMachine
+            Random random = new Random();
+            if (txtinslot.size() == 5){               
+                do {
+                    randomIndex = random.nextInt( txtinslot.size());
+                    if (randomindexlist.contains(randomIndex)== false){
+                        randomindexlist.add(randomIndex);
+                    }
+                }while(randomindexlist.size() < 5);          
+            txtSlot1.setText(txtinslot.get(randomindexlist.get(0)));  
+            txtSlot2.setText(txtinslot.get(randomindexlist.get(1)));  
+            txtSlot3.setText(txtinslot.get(randomindexlist.get(2)));   
+            txtSlot4.setText(txtinslot.get(randomindexlist.get(3)));    
+            txtSlot5.setText(txtinslot.get(randomindexlist.get(4)));
+            }else{
+                JOptionPane.showMessageDialog(this, "Pls Fill More Menu", "Error", 
+                    JOptionPane.WARNING_MESSAGE); 
+            }
+            
+        }
+        
+        if (operation.equals("DeleteText")){
+            if (txtinslot.contains(txtFoodname.getText())){
+                this.txtinslot.remove(txtFoodname.getText());
+                JOptionPane.showMessageDialog(this, "Delete Successful!","Info",
+                            JOptionPane.INFORMATION_MESSAGE);              
+            }else{
+                JOptionPane.showMessageDialog(this, "Your Delete Not Found!!", "Error", 
+                    JOptionPane.WARNING_MESSAGE); 
+            }   
+            ChangeTextSlotMachine();       
+        }
+        
+    }
+    
+    public void ChangeTextSlotMachine(){        
+        txtSlot1.setText("");
+        txtSlot2.setText("");
+        txtSlot3.setText("");
+        txtSlot4.setText("");
+        txtSlot5.setText("");
+         
+        switch (txtinslot.size()) {
+            case 1 -> txtSlot1.setText(txtinslot.get(0));
+            case 2 -> {
+                txtSlot1.setText(txtinslot.get(0));
+                txtSlot2.setText(txtinslot.get(1));
+            }
+            case 3 -> {
+                txtSlot1.setText(txtinslot.get(0));
+                txtSlot2.setText(txtinslot.get(1));
+                txtSlot3.setText(txtinslot.get(2));
+            }
+            case 4 -> {
+                txtSlot1.setText(txtinslot.get(0));
+                txtSlot2.setText(txtinslot.get(1));
+                txtSlot3.setText(txtinslot.get(2));
+                txtSlot4.setText(txtinslot.get(3));
+            }
+            case 5 -> {
+                txtSlot1.setText(txtinslot.get(0));
+                txtSlot2.setText(txtinslot.get(1));
+                txtSlot3.setText(txtinslot.get(2));
+                txtSlot4.setText(txtinslot.get(3));
+                txtSlot5.setText(txtinslot.get(4));
+            }
+        default -> {
+            }
+        }
+    }
+    
+    /*public void Countdown() throws InterruptedException{
+        for (int i=0; i <5;i++){
+            Thread.sleep(200);
+        }
+        SlotMachine("RandomText");
+        for (int i=0; i <5;i++){
+            
+            Thread.sleep(50);
+        SlotMachine("RandomText");    
+        }
+       
+    }*/
+    
     //--APACHE's METHOD--..
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -34,7 +157,14 @@ public class MainSomHai extends javax.swing.JFrame {
         btnTunSafe = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
         btnRandom = new javax.swing.JButton();
+        txtSlot3 = new javax.swing.JLabel();
+        txtSlot2 = new javax.swing.JLabel();
+        txtSlot4 = new javax.swing.JLabel();
+        txtSlot1 = new javax.swing.JLabel();
+        txtSlot5 = new javax.swing.JLabel();
+        txtSlotMachine = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main Program");
@@ -50,6 +180,9 @@ public class MainSomHai extends javax.swing.JFrame {
         btnAdd.setContentAreaFilled(false);
         btnAdd.setFocusPainted(false);
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAddMouseEntered(evt);
             }
@@ -65,6 +198,9 @@ public class MainSomHai extends javax.swing.JFrame {
         btnDelete.setContentAreaFilled(false);
         btnDelete.setFocusPainted(false);
         btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnDeleteMouseEntered(evt);
             }
@@ -166,10 +302,10 @@ public class MainSomHai extends javax.swing.JFrame {
         btnRandom.setBorder(null);
         btnRandom.setBorderPainted(false);
         btnRandom.setContentAreaFilled(false);
-        btnRandom.setMaximumSize(new java.awt.Dimension(199, 80));
-        btnRandom.setMinimumSize(new java.awt.Dimension(199, 80));
-        btnRandom.setPreferredSize(new java.awt.Dimension(199, 80));
         btnRandom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRandomMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnRandomMouseEntered(evt);
             }
@@ -179,8 +315,29 @@ public class MainSomHai extends javax.swing.JFrame {
         });
         getContentPane().add(btnRandom, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
 
+        txtSlot3.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        getContentPane().add(txtSlot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 390, 350, 40));
+
+        txtSlot2.setForeground(new java.awt.Color(225, 225, 225));
+        getContentPane().add(txtSlot2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 330, -1, -1));
+
+        txtSlot4.setForeground(new java.awt.Color(225, 225, 225));
+        getContentPane().add(txtSlot4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, -1, -1));
+
+        txtSlot1.setForeground(new java.awt.Color(225, 225, 225));
+        getContentPane().add(txtSlot1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 260, -1, -1));
+
+        txtSlot5.setForeground(new java.awt.Color(225, 225, 225));
+        getContentPane().add(txtSlot5, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 530, -1, -1));
+
+        txtSlotMachine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SlotMachine.png"))); // NOI18N
+        getContentPane().add(txtSlotMachine, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 240, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainTunSom.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTextField1.setText("jTextField1");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 400, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -370,6 +527,23 @@ public class MainSomHai extends javax.swing.JFrame {
             System.err.println(e);
         }
     }//GEN-LAST:event_btnRandomMouseExited
+
+    private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
+        SlotMachine("AddText");
+    }//GEN-LAST:event_btnAddMouseClicked
+
+    private void btnRandomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRandomMouseClicked
+        /*try {
+            Countdown();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainSomHai.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        SlotMachine("RandomText");
+    }//GEN-LAST:event_btnRandomMouseClicked
+
+    private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
+        SlotMachine("DeleteText");
+    }//GEN-LAST:event_btnDeleteMouseClicked
     
     private void showTextFeild(){
         txtFoodname.setBackground(new java.awt.Color(0,0,0,0));
@@ -391,7 +565,14 @@ public class MainSomHai extends javax.swing.JFrame {
     private javax.swing.JButton btnTunSafe;
     private javax.swing.JButton btnTunSom;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtFoodname;
+    private javax.swing.JLabel txtSlot1;
+    private javax.swing.JLabel txtSlot2;
+    private javax.swing.JLabel txtSlot3;
+    private javax.swing.JLabel txtSlot4;
+    private javax.swing.JLabel txtSlot5;
+    private javax.swing.JLabel txtSlotMachine;
     // End of variables declaration//GEN-END:variables
 }
 //--JAVA FILE's END--..

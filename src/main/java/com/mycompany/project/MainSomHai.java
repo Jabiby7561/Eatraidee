@@ -33,6 +33,7 @@ public class MainSomHai extends javax.swing.JFrame {
         btnTunSom = new javax.swing.JButton();
         btnTunSafe = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
+        btnRandom = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,7 +42,7 @@ public class MainSomHai extends javax.swing.JFrame {
 
         txtFoodname.setBackground(new java.awt.Color(100, 100, 100));
         txtFoodname.setBorder(null);
-        getContentPane().add(txtFoodname, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 289, 280, 50));
+        getContentPane().add(txtFoodname, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 260, 50));
 
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnAdd_default.png"))); // NOI18N
         btnAdd.setBorder(null);
@@ -56,7 +57,7 @@ public class MainSomHai extends javax.swing.JFrame {
                 btnAddMouseExited(evt);
             }
         });
-        getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 385, -1, -1));
+        getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
 
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnDelete_default.png"))); // NOI18N
         btnDelete.setBorder(null);
@@ -71,7 +72,7 @@ public class MainSomHai extends javax.swing.JFrame {
                 btnDeleteMouseExited(evt);
             }
         });
-        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 495, -1, -1));
+        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, -1, -1));
 
         btnTunHue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunHew_default.png"))); // NOI18N
         btnTunHue.setBorder(null);
@@ -160,6 +161,23 @@ public class MainSomHai extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
+
+        btnRandom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnRandom_default.png"))); // NOI18N
+        btnRandom.setBorder(null);
+        btnRandom.setBorderPainted(false);
+        btnRandom.setContentAreaFilled(false);
+        btnRandom.setMaximumSize(new java.awt.Dimension(199, 80));
+        btnRandom.setMinimumSize(new java.awt.Dimension(199, 80));
+        btnRandom.setPreferredSize(new java.awt.Dimension(199, 80));
+        btnRandom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRandomMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRandomMouseExited(evt);
+            }
+        });
+        getContentPane().add(btnRandom, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainTunSom.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -332,6 +350,26 @@ public class MainSomHai extends javax.swing.JFrame {
             System.err.println(e);
         }
     }//GEN-LAST:event_btnHomeMouseExited
+
+    private void btnRandomMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRandomMouseEntered
+        try{
+            String filePath = "/btnRandom_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnRandom.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnRandomMouseEntered
+
+    private void btnRandomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRandomMouseExited
+         try{
+            String filePath = "/btnRandom_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnRandom.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnRandomMouseExited
     
     private void showTextFeild(){
         txtFoodname.setBackground(new java.awt.Color(0,0,0,0));
@@ -348,6 +386,7 @@ public class MainSomHai extends javax.swing.JFrame {
     private javax.swing.JButton btnChefTun;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnRandom;
     private javax.swing.JButton btnTunHue;
     private javax.swing.JButton btnTunSafe;
     private javax.swing.JButton btnTunSom;

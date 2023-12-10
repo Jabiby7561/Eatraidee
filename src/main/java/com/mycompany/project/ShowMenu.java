@@ -373,6 +373,10 @@ public class ShowMenu extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // Send selectedMenu variable to save database class
+        OrderRecord record = new OrderRecord();
+        record.setFoodName(selectedMenu);
+        record.insertToOrderMenu_DB();
+        
         FinishFrame finishFrame = new FinishFrame();
         finishFrame.setVisible(true);
         finishFrame.pack();
@@ -380,6 +384,7 @@ public class ShowMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnNextActionPerformed
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ShowMenu;
     private javax.swing.JButton btnBack;

@@ -11,9 +11,9 @@ public class SelectMenuFrame extends javax.swing.JFrame {
 
     //--VARIABLE--..
     private ImageIcon imgIcon;
-    private String SelectMenuType;
-    private String SelectFoodType;
-    private String SelectMenu;
+    private String selectMenuType;
+    private String selectFoodType;
+    private String selectMenu;
     private int CheckTwiceMenu = -1;
       
     //--METHOD--..
@@ -40,7 +40,7 @@ public class SelectMenuFrame extends javax.swing.JFrame {
             
         // change picture
         try{
-            String filePath = menuList.SelectMenuList.get(randomIndex);               
+        String filePath = menuList.SelectMenuList.get(randomIndex);               
             imgIcon = new ImageIcon(getClass().getResource(filePath));
             ShowMenu.setIcon(imgIcon);
             
@@ -51,27 +51,27 @@ public class SelectMenuFrame extends javax.swing.JFrame {
     }
 
     public String getSelectMenuType() {
-        return SelectMenuType;
+        return selectMenuType;
     }
 
-    public void setSelectMenuType(String SelectMenuType) {
-        this.SelectMenuType = SelectMenuType;
+    public void setSelectMenuType(String selectMenuType) {
+        this.selectMenuType = selectMenuType;
     }
 
     public String getSelectFoodType() {
-        return SelectFoodType;
+        return selectFoodType;
     }
 
     public void setSelectFoodType(String SelectFoodType) {
-        this.SelectFoodType = SelectFoodType;
+        this.selectFoodType = SelectFoodType;
     }
     
     public String getSelectMenu() {
-        return SelectMenu;
+        return selectMenu;
     }
 
     public void setSelectMenu(String SelectMenu) {
-        this.SelectMenu = SelectMenu;
+        this.selectMenu = SelectMenu;
     }
        
     //--APACHE's METHOD--..

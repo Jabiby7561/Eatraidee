@@ -185,6 +185,9 @@ public class LoginFrame extends javax.swing.JFrame {
                 if(result.next()){
                     JOptionPane.showMessageDialog(this, "Login Successful!","Info",
                             JOptionPane.INFORMATION_MESSAGE);
+                    OrderRecord order = new OrderRecord();
+                    order.setUsername(username);
+                    
                     this.dispose();
                     MainFrame mainFrame = new MainFrame();
                     mainFrame.setVisible(true);

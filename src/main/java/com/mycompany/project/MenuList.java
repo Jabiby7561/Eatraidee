@@ -22,14 +22,13 @@ public class MenuList {
             cursor = con.prepareStatement(sqlFetch);
             cursor.setString(1,CheckSelectedMenu);
             result = cursor.executeQuery(); 
-            
+            while (result.next()){
+                SelectMenuList.add("/" + result.getString("foodName")+ ".png");               
+            }  
         }catch(Exception e){
             System.out.println(e.toString());
         }finally{
-            try{
-                while (result.next()){
-                    SelectMenuList.add("/" + result.getString("foodName")+ ".png");               
-                }                
+            try{           
                 con.close();
                 result.close();
                 cursor.close();

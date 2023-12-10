@@ -166,6 +166,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         btnTunSom = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
         ShowMenu = new javax.swing.JLabel();
+        btnSelectAnotherElements = new javax.swing.JButton();
         labelBgMain = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -328,6 +329,23 @@ public class SelectTypeFrame extends javax.swing.JFrame {
 
         ShowMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picmellow.png"))); // NOI18N
         getContentPane().add(ShowMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 210, -1, -1));
+
+        btnSelectAnotherElements.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnSelectAnotherElements_default.png"))); // NOI18N
+        btnSelectAnotherElements.setBorder(null);
+        btnSelectAnotherElements.setBorderPainted(false);
+        btnSelectAnotherElements.setContentAreaFilled(false);
+        btnSelectAnotherElements.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSelectAnotherElementsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSelectAnotherElementsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSelectAnotherElementsMouseExited(evt);
+            }
+        });
+        getContentPane().add(btnSelectAnotherElements, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 580, -1, -1));
 
         labelBgMain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SelectTypeFrame.png"))); // NOI18N
         getContentPane().add(labelBgMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -561,12 +579,41 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnsSkipActionPerformed
 
+    private void btnSelectAnotherElementsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSelectAnotherElementsMouseEntered
+        try{
+            String filePath = "/btnSelectAnotherElements_hover.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnSelectAnotherElements.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnSelectAnotherElementsMouseEntered
+
+    private void btnSelectAnotherElementsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSelectAnotherElementsMouseExited
+        try{
+            String filePath = "/btnSelectAnotherElements_default.png";
+            imgIcon = new ImageIcon(getClass().getResource(filePath));
+            btnSelectAnotherElements.setIcon(imgIcon);
+        }catch(Exception e){
+            System.err.println(e);
+        }
+    }//GEN-LAST:event_btnSelectAnotherElementsMouseExited
+
+    private void btnSelectAnotherElementsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSelectAnotherElementsMouseClicked
+        MainDaiWelaa mainDaiWelaa = new MainDaiWelaa();
+        mainDaiWelaa.setVisible(true);
+        mainDaiWelaa.pack();
+        mainDaiWelaa.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnSelectAnotherElementsMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ShowMenu;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChefTun;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnSelect;
+    private javax.swing.JButton btnSelectAnotherElements;
     private javax.swing.JButton btnTunHue;
     private javax.swing.JButton btnTunSafe;
     private javax.swing.JButton btnTunSom;

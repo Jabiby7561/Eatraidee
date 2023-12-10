@@ -3,10 +3,10 @@ package com.mycompany.project;
 
 //--IMPORT--..
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 
 //--JAVA CLASS--..
@@ -15,6 +15,9 @@ public class MainSomHai extends javax.swing.JFrame {
     //--VARIABLE--..
     ImageIcon imgIcon;
     CustomFont customFont;
+    Timer CountDown;
+    private int TimerCount = 1;
+    
     private ArrayList<String> txtinslot = new ArrayList<>();
     
     //--METHOD--..
@@ -26,6 +29,14 @@ public class MainSomHai extends javax.swing.JFrame {
         showTextFeild();
     }
 
+    public int getTimerCount() {
+        return TimerCount;
+    }
+
+    public void setTimerCount(int TimerCount) {
+        this.TimerCount = TimerCount;
+    }
+    
     
     public void SlotMachine(String operation){
         customFont = new CustomFont();
@@ -41,14 +52,19 @@ public class MainSomHai extends javax.swing.JFrame {
             txtSlot2.setFont(font);
             txtSlot3.setFont(font);  
             txtSlot4.setFont(font);  
-            txtSlot5.setFont(font); 
+            txtSlot5.setFont(font);
+            
             ChangeTextSlotMachine();
         }
         
         if (operation.equals("AddText")){
             if (txtinslot.size() < 5){
-                txtinslot.add(txtFoodname.getText());
-                
+                if (txtFoodname.getText().equals("")){
+                    JOptionPane.showMessageDialog(this, "Pls Fill The Blanks", "Error", 
+                    JOptionPane.WARNING_MESSAGE);
+                }else{
+                    txtinslot.add(txtFoodname.getText());
+                }              
             }else{
                   JOptionPane.showMessageDialog(this, "The Limited is 5 Menu", "Error", 
                     JOptionPane.WARNING_MESSAGE);     
@@ -100,6 +116,12 @@ public class MainSomHai extends javax.swing.JFrame {
         txtSlot3.setText("");
         txtSlot4.setText("");
         txtSlot5.setText("");
+        
+        txtSlot1.setForeground(new java.awt.Color(0,0,0));
+        txtSlot2.setForeground(new java.awt.Color(0,0,0));
+        txtSlot3.setForeground(new java.awt.Color(0,0,0));
+        txtSlot4.setForeground(new java.awt.Color(0,0,0));
+        txtSlot5.setForeground(new java.awt.Color(0,0,0));
          
         switch (txtinslot.size()) {
             case 1 -> txtSlot1.setText(txtinslot.get(0));
@@ -130,19 +152,6 @@ public class MainSomHai extends javax.swing.JFrame {
         }
     }
     
-    /*public void Countdown() throws InterruptedException{
-        for (int i=0; i <5;i++){
-            Thread.sleep(200);
-        }
-        SlotMachine("RandomText");
-        for (int i=0; i <5;i++){
-            
-            Thread.sleep(50);
-        SlotMachine("RandomText");    
-        }
-       
-    }*/
-    
     //--APACHE's METHOD--..
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -171,6 +180,7 @@ public class MainSomHai extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtFoodname.setBackground(new java.awt.Color(100, 100, 100));
+        txtFoodname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtFoodname.setBorder(null);
         getContentPane().add(txtFoodname, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 260, 50));
 
@@ -316,19 +326,20 @@ public class MainSomHai extends javax.swing.JFrame {
         getContentPane().add(btnRandom, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
 
         txtSlot3.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        getContentPane().add(txtSlot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 390, 350, 40));
+        txtSlot3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(txtSlot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 380, 360, 50));
 
-        txtSlot2.setForeground(new java.awt.Color(225, 225, 225));
-        getContentPane().add(txtSlot2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 330, -1, -1));
+        txtSlot2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(txtSlot2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 290, 50));
 
-        txtSlot4.setForeground(new java.awt.Color(225, 225, 225));
-        getContentPane().add(txtSlot4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 460, -1, -1));
+        txtSlot4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(txtSlot4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 450, 290, 50));
 
-        txtSlot1.setForeground(new java.awt.Color(225, 225, 225));
-        getContentPane().add(txtSlot1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 260, -1, -1));
+        txtSlot1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(txtSlot1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 250, 290, 50));
 
-        txtSlot5.setForeground(new java.awt.Color(225, 225, 225));
-        getContentPane().add(txtSlot5, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 530, -1, -1));
+        txtSlot5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(txtSlot5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 510, 290, 50));
 
         txtSlotMachine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SlotMachine.png"))); // NOI18N
         getContentPane().add(txtSlotMachine, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 240, -1, -1));
@@ -362,7 +373,6 @@ public class MainSomHai extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunHueMouseEntered
 
     private void btnTunHueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseExited
-        //System.out.println("Exit");
         try{
             String filePath = "/btnTunHew_default.png";
             imgIcon = new ImageIcon(getClass().getResource(filePath));
@@ -519,7 +529,7 @@ public class MainSomHai extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRandomMouseEntered
 
     private void btnRandomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRandomMouseExited
-         try{
+        try{
             String filePath = "/btnRandom_default.png";
             imgIcon = new ImageIcon(getClass().getResource(filePath));
             btnRandom.setIcon(imgIcon);
@@ -533,12 +543,34 @@ public class MainSomHai extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddMouseClicked
 
     private void btnRandomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRandomMouseClicked
-        /*try {
-            Countdown();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MainSomHai.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        SlotMachine("RandomText");
+        setTimerCount(1) ;
+        CountDown = new Timer( 85,new ActionListener(){     
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (getTimerCount() <=9){
+                    String filePath = "/SlotMachine" + getTimerCount() +".png";
+                    imgIcon = new ImageIcon(getClass().getResource(filePath));
+                    txtSlotMachine.setIcon(imgIcon);
+                    
+                    SlotMachine("RandomText");
+                                 
+                }else{
+                    String filePath = "/SlotMachine.png";
+                    imgIcon = new ImageIcon(getClass().getResource(filePath));
+                    txtSlotMachine.setIcon(imgIcon);
+                    
+                    txtSlot1.setForeground(new java.awt.Color(225,225,225));
+                    txtSlot2.setForeground(new java.awt.Color(225,225,225));
+                    txtSlot3.setForeground(new java.awt.Color(0,0,0));
+                    txtSlot4.setForeground(new java.awt.Color(225,225,225));
+                    txtSlot5.setForeground(new java.awt.Color(225,225,225));
+                    CountDown.stop();
+                }
+                setTimerCount(getTimerCount()+ 1) ;
+            }                         
+        });
+        CountDown.start();
+        
     }//GEN-LAST:event_btnRandomMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked

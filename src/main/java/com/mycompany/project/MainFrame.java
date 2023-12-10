@@ -10,6 +10,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     //--VARIABLE--..
     ImageIcon imgIcon;
+    public static String CheckAccount;
     
     //--METHOD--..
     public MainFrame() {
@@ -89,6 +90,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnChefTunMouseExited(evt);
+            }
+        });
+        btnChefTun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChefTunActionPerformed(evt);
             }
         });
         getContentPane().add(btnChefTun, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 296, 230, 80));
@@ -224,11 +230,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunHueActionPerformed
 
     private void btnChefTunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChefTunMouseClicked
-        MainDaiWelaa mainDaiWelaa = new MainDaiWelaa();
-        mainDaiWelaa.setVisible(true);
-        mainDaiWelaa.pack();
-        mainDaiWelaa.setLocationRelativeTo(null);
-        this.dispose();
+       
     }//GEN-LAST:event_btnChefTunMouseClicked
 
     private void btnTunSomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSomActionPerformed
@@ -260,12 +262,29 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeMouseExited
 
     private void btnTunSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSafeActionPerformed
-        MainTunSafe mainTunSafe = new MainTunSafe();
-        mainTunSafe.setVisible(true);
-        mainTunSafe.pack();
-        mainTunSafe.setLocationRelativeTo(null);
-        this.dispose();
+        if (CheckAccount.equals("Don't Have Account")){
+            JOptionPane.showMessageDialog(this, "Your Don't Have Account Pls Sign-UP or Log-IN", "Error", JOptionPane.WARNING_MESSAGE);
+            UserOptionFrame userOptionFrame = new UserOptionFrame();
+            userOptionFrame.setVisible(true);
+            userOptionFrame.pack();
+            userOptionFrame.setLocationRelativeTo(null);
+            this.dispose();
+        }else if (MainFrame.CheckAccount.equals("Have Account")){
+            MainTunSafe mainTunSafe = new MainTunSafe();
+            mainTunSafe.setVisible(true);
+            mainTunSafe.pack();
+            mainTunSafe.setLocationRelativeTo(null);
+            this.dispose();
+        }         
     }//GEN-LAST:event_btnTunSafeActionPerformed
+
+    private void btnChefTunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChefTunActionPerformed
+        MainDaiWelaa mainDaiWelaa = new MainDaiWelaa();
+        mainDaiWelaa.setVisible(true);
+        mainDaiWelaa.pack();
+        mainDaiWelaa.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnChefTunActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChefTun;

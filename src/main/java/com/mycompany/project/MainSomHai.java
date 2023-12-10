@@ -236,6 +236,11 @@ public class MainSomHai extends javax.swing.JFrame {
                 btnTunHueMouseExited(evt);
             }
         });
+        btnTunHue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTunHueActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnTunHue, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 170, -1, -1));
 
         btnChefTun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnDaiWelaa_default.png"))); // NOI18N
@@ -362,11 +367,7 @@ public class MainSomHai extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTunHueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseClicked
-        MainTunHew mainTunHew = new MainTunHew();
-        mainTunHew.setVisible(true);
-        mainTunHew.pack();
-        mainTunHew.setLocationRelativeTo(null);
-        this.dispose();
+        
     }//GEN-LAST:event_btnTunHueMouseClicked
 
     private void btnTunHueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseEntered
@@ -597,12 +598,29 @@ public class MainSomHai extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTunSafeMouseClicked
 
     private void btnTunSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSafeActionPerformed
-        MainTunSafe mainTunSafe = new MainTunSafe();
-        mainTunSafe.setVisible(true);
-        mainTunSafe.pack();
-        mainTunSafe.setLocationRelativeTo(null);
-        this.dispose();
+        if (MainFrame.CheckAccount.equals("Don't Have Account")){
+            JOptionPane.showMessageDialog(this, "Your Don't Have Account Pls Sign-UP or Log-IN", "Error", JOptionPane.WARNING_MESSAGE);
+            UserOptionFrame userOptionFrame = new UserOptionFrame();
+            userOptionFrame.setVisible(true);
+            userOptionFrame.pack();
+            userOptionFrame.setLocationRelativeTo(null);
+            this.dispose();
+        }else if (MainFrame.CheckAccount.equals("Have Account")){
+            MainTunSafe mainTunSafe = new MainTunSafe();
+            mainTunSafe.setVisible(true);
+            mainTunSafe.pack();
+            mainTunSafe.setLocationRelativeTo(null);
+            this.dispose();
+        }     
     }//GEN-LAST:event_btnTunSafeActionPerformed
+
+    private void btnTunHueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunHueActionPerformed
+        MainTunHew mainTunHew = new MainTunHew();
+        mainTunHew.setVisible(true);
+        mainTunHew.pack();
+        mainTunHew.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnTunHueActionPerformed
     
     private void showTextFeild(){
         txtFoodname.setBackground(new java.awt.Color(0,0,0,0));

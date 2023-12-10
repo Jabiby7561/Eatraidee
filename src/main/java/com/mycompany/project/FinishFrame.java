@@ -367,11 +367,20 @@ public class FinishFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnTunSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSafeActionPerformed
-        MainTunSafe mainTunSafe = new MainTunSafe();
-        mainTunSafe.setVisible(true);
-        mainTunSafe.pack();
-        mainTunSafe.setLocationRelativeTo(null);
-        this.dispose();
+        if (MainFrame.CheckAccount.equals("Don't Have Account")){
+            JOptionPane.showMessageDialog(this, "Your Don't Have Account Pls Sign-UP or Log-IN", "Error", JOptionPane.WARNING_MESSAGE);
+            UserOptionFrame userOptionFrame = new UserOptionFrame();
+            userOptionFrame.setVisible(true);
+            userOptionFrame.pack();
+            userOptionFrame.setLocationRelativeTo(null);
+            this.dispose();
+        }else if (MainFrame.CheckAccount.equals("Have Account")){
+            MainTunSafe mainTunSafe = new MainTunSafe();
+            mainTunSafe.setVisible(true);
+            mainTunSafe.pack();
+            mainTunSafe.setLocationRelativeTo(null);
+            this.dispose();
+        }    
     }//GEN-LAST:event_btnTunSafeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

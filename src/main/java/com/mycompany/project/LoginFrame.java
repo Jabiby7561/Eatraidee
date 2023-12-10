@@ -125,7 +125,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        //Do this next time
+        
         String username = txtUsername.getText();
         String password = String.valueOf(txtPassword.getPassword());
         if(username.isEmpty() || password.isEmpty()){
@@ -134,6 +134,7 @@ public class LoginFrame extends javax.swing.JFrame {
             txtUsername.requestFocus();
         }else{
             userLogin(username,password);
+            MainFrame.CheckAccount = "Have Account";
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 

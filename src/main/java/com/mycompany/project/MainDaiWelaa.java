@@ -124,14 +124,16 @@ public class MainDaiWelaa extends javax.swing.JFrame {
         btnTunHue.setContentAreaFilled(false);
         btnTunHue.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTunHue.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnTunHueMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnTunHueMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnTunHueMouseExited(evt);
+            }
+        });
+        btnTunHue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTunHueActionPerformed(evt);
             }
         });
         getContentPane().add(btnTunHue, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 170, -1, -1));
@@ -216,14 +218,6 @@ public class MainDaiWelaa extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnTunHueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseClicked
-        MainTunHew mainTunHew = new MainTunHew();
-        mainTunHew.setVisible(true);
-        mainTunHew.pack();
-        mainTunHew.setLocationRelativeTo(null);
-        this.dispose();
-    }//GEN-LAST:event_btnTunHueMouseClicked
 
     private void btnTunHueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseEntered
         //System.out.println("Enter");
@@ -477,12 +471,29 @@ public class MainDaiWelaa extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTypeActionPerformed
 
     private void btnTunSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSafeActionPerformed
-        MainTunSafe mainTunSafe = new MainTunSafe();
-        mainTunSafe.setVisible(true);
-        mainTunSafe.pack();
-        mainTunSafe.setLocationRelativeTo(null);
-        this.dispose();
+        if (MainFrame.CheckAccount.equals("Don't Have Account")){
+            JOptionPane.showMessageDialog(this, "Your Don't Have Account Pls Sign-UP or Log-IN", "Error", JOptionPane.WARNING_MESSAGE);
+            UserOptionFrame userOptionFrame = new UserOptionFrame();
+            userOptionFrame.setVisible(true);
+            userOptionFrame.pack();
+            userOptionFrame.setLocationRelativeTo(null);
+            this.dispose();
+        }else if (MainFrame.CheckAccount.equals("Have Account")){
+            MainTunSafe mainTunSafe = new MainTunSafe();
+            mainTunSafe.setVisible(true);
+            mainTunSafe.pack();
+            mainTunSafe.setLocationRelativeTo(null);
+            this.dispose();
+        }    
     }//GEN-LAST:event_btnTunSafeActionPerformed
+
+    private void btnTunHueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunHueActionPerformed
+        MainTunHew mainTunHew = new MainTunHew();
+        mainTunHew.setVisible(true);
+        mainTunHew.pack();
+        mainTunHew.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnTunHueActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChefTun;

@@ -104,6 +104,8 @@ public class UserOptionFrame extends javax.swing.JFrame {
         mainFrame.setVisible(true);
         mainFrame.pack();
         mainFrame.setLocationRelativeTo(null);
+        
+        MainFrame.CheckAccount = "Don't Have Account";
         this.dispose();
     }//GEN-LAST:event_btnSkipActionPerformed
 

@@ -96,6 +96,7 @@ public class MainSomHai extends javax.swing.JFrame {
             
         }
         
+        
         if (operation.equals("DeleteText")){
             if (txtinslot.contains(txtFoodname.getText())){
                 this.txtinslot.remove(txtFoodname.getText());
@@ -106,8 +107,7 @@ public class MainSomHai extends javax.swing.JFrame {
                     JOptionPane.WARNING_MESSAGE); 
             }   
             ChangeTextSlotMachine();       
-        }
-        
+        }       
     }
     
     public void ChangeTextSlotMachine(){        
@@ -325,7 +325,7 @@ public class MainSomHai extends javax.swing.JFrame {
         });
         getContentPane().add(btnRandom, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
 
-        txtSlot3.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        txtSlot3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtSlot3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(txtSlot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 380, 360, 50));
 
@@ -544,33 +544,36 @@ public class MainSomHai extends javax.swing.JFrame {
 
     private void btnRandomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRandomMouseClicked
         setTimerCount(1) ;
-        CountDown = new Timer( 85,new ActionListener(){     
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (getTimerCount() <=9){
-                    String filePath = "/SlotMachine" + getTimerCount() +".png";
-                    imgIcon = new ImageIcon(getClass().getResource(filePath));
-                    txtSlotMachine.setIcon(imgIcon);
+        if (txtinslot.size() == 5){
+            CountDown = new Timer( 85,new ActionListener(){     
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (getTimerCount() <= 9){
+                        String filePath = "/SlotMachine" + getTimerCount() +".png";
+                        imgIcon = new ImageIcon(getClass().getResource(filePath));
+                        txtSlotMachine.setIcon(imgIcon);
                     
-                    SlotMachine("RandomText");
+                        SlotMachine("RandomText");
                                  
-                }else{
-                    String filePath = "/SlotMachine.png";
-                    imgIcon = new ImageIcon(getClass().getResource(filePath));
-                    txtSlotMachine.setIcon(imgIcon);
+                    }else{
+                        String filePath = "/SlotMachine.png";
+                        imgIcon = new ImageIcon(getClass().getResource(filePath));
+                        txtSlotMachine.setIcon(imgIcon);
                     
-                    txtSlot1.setForeground(new java.awt.Color(225,225,225));
-                    txtSlot2.setForeground(new java.awt.Color(225,225,225));
-                    txtSlot3.setForeground(new java.awt.Color(0,0,0));
-                    txtSlot4.setForeground(new java.awt.Color(225,225,225));
-                    txtSlot5.setForeground(new java.awt.Color(225,225,225));
-                    CountDown.stop();
-                }
-                setTimerCount(getTimerCount()+ 1) ;
-            }                         
-        });
-        CountDown.start();
-        
+                        txtSlot1.setForeground(new java.awt.Color(225,225,225));
+                        txtSlot2.setForeground(new java.awt.Color(225,225,225));
+                        txtSlot3.setForeground(new java.awt.Color(0,0,0));
+                        txtSlot4.setForeground(new java.awt.Color(225,225,225));
+                        txtSlot5.setForeground(new java.awt.Color(225,225,225));
+                        CountDown.stop();
+                    }
+                    setTimerCount(getTimerCount()+ 1) ;
+                }                         
+            });
+            CountDown.start();
+        }else{
+            SlotMachine("RandomText");
+        }
     }//GEN-LAST:event_btnRandomMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked

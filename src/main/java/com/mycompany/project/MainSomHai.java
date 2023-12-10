@@ -226,9 +226,6 @@ public class MainSomHai extends javax.swing.JFrame {
         btnTunHue.setContentAreaFilled(false);
         btnTunHue.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTunHue.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnTunHueMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnTunHueMouseEntered(evt);
             }
@@ -365,10 +362,6 @@ public class MainSomHai extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnTunHueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseClicked
-        
-    }//GEN-LAST:event_btnTunHueMouseClicked
 
     private void btnTunHueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTunHueMouseEntered
         //System.out.println("Enter");

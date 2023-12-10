@@ -378,7 +378,8 @@ public class MainTunSafe extends javax.swing.JFrame {
                 jScrollPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
                 jScrollPane1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
                 jScrollPane1.setViewportView(wrapperPanel);
-                
+                jScrollPane1.setDoubleBuffered(true);
+                jScrollPane1.getVerticalScrollBar().setUnitIncrement(50);
                 jScrollPane1.revalidate();
                 jScrollPane1.repaint();
                 

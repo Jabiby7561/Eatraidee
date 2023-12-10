@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+//--PACKAGE--..
 package com.mycompany.project;
 
+//--IMPORT--..
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,14 +9,14 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-/**
- *
- * @author User
- */
+//--JAVA CLASS--..
 public class OrderRecord {
+    
+    //--VARIABLE--..
     private static int userId;
     private static String foodName;
     
+    //--METHOD--..
     public int getUserId() {
         return userId;
     }
@@ -60,7 +58,6 @@ public class OrderRecord {
         OrderRecord.foodName = foodName;
     }
 
-
     public void insertToOrderMenu_DB(){
         //System.out.println("Set user: " + userId); 
         //System.out.println("Food Name : "+foodName);
@@ -79,3 +76,4 @@ public class OrderRecord {
         }
     }   
 }
+//--JAVA FILE's END--..

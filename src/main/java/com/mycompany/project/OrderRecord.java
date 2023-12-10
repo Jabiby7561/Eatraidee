@@ -77,6 +77,5 @@ public class OrderRecord {
         }catch(SQLException e){
             System.out.println(e.toString());
         }
-    }
-    
+    }   
 }

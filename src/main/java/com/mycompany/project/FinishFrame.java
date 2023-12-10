@@ -90,6 +90,11 @@ public class FinishFrame extends javax.swing.JFrame {
                 btnTunSafeMouseExited(evt);
             }
         });
+        btnTunSafe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTunSafeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnTunSafe, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, 200, 100));
 
         btnTunHue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunHew_default.png"))); // NOI18N
@@ -360,6 +365,14 @@ public class FinishFrame extends javax.swing.JFrame {
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnTunSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSafeActionPerformed
+        MainTunSafe mainTunSafe = new MainTunSafe();
+        mainTunSafe.setVisible(true);
+        mainTunSafe.pack();
+        mainTunSafe.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnTunSafeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChefTun;

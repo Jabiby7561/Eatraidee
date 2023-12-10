@@ -150,7 +150,7 @@ public class MainTunSafe extends javax.swing.JFrame {
                 btnHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 80, 60));
+        getContentPane().add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 638, 80, 60));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(820, 700));
         jScrollPane1.setBackground(new java.awt.Color(0,0,0,0));

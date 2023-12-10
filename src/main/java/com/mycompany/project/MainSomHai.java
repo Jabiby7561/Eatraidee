@@ -271,11 +271,6 @@ public class MainSomHai extends javax.swing.JFrame {
                 btnTunSomMouseExited(evt);
             }
         });
-        btnTunSom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTunSomActionPerformed(evt);
-            }
-        });
         getContentPane().add(btnTunSom, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 416, -1, -1));
 
         btnTunSafe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btnTunSave_default.png"))); // NOI18N
@@ -601,9 +596,13 @@ public class MainSomHai extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnTunSafeMouseClicked
 
-    private void btnTunSomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTunSomActionPerformed
+    private void btnTunSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSafeActionPerformed
+        MainTunSafe mainTunSafe = new MainTunSafe();
+        mainTunSafe.setVisible(true);
+        mainTunSafe.pack();
+        mainTunSafe.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnTunSafeActionPerformed
     
     private void showTextFeild(){
         txtFoodname.setBackground(new java.awt.Color(0,0,0,0));

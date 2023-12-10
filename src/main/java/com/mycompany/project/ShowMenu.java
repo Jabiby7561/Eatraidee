@@ -134,9 +134,6 @@ public class ShowMenu extends javax.swing.JFrame {
         btnChefTun.setContentAreaFilled(false);
         btnChefTun.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnChefTun.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnChefTunMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnChefTunMouseEntered(evt);
             }
@@ -288,10 +285,6 @@ public class ShowMenu extends javax.swing.JFrame {
         mainTunHew.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnTunHueActionPerformed
-
-    private void btnChefTunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChefTunMouseClicked
-        
-    }//GEN-LAST:event_btnChefTunMouseClicked
 
     private void btnTunSomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTunSomActionPerformed
         MainSomHai mainSomHai = new MainSomHai();

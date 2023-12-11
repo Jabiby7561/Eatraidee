@@ -41,6 +41,7 @@ public class FinishFrame extends javax.swing.JFrame {
         btnExit.setBorder(null);
         btnExit.setBorderPainted(false);
         btnExit.setContentAreaFilled(false);
+        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExit.setFocusPainted(false);
         btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -61,6 +62,7 @@ public class FinishFrame extends javax.swing.JFrame {
         btnHome2.setBorder(null);
         btnHome2.setBorderPainted(false);
         btnHome2.setContentAreaFilled(false);
+        btnHome2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHome2.setFocusPainted(false);
         btnHome2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

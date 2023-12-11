@@ -30,6 +30,7 @@ public class LogoFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelBg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoFrame.png"))); // NOI18N
+        labelBg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelBg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelBgMouseClicked(evt);

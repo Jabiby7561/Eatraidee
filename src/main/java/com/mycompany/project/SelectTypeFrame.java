@@ -178,6 +178,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         btnsSkip.setBorder(null);
         btnsSkip.setBorderPainted(false);
         btnsSkip.setContentAreaFilled(false);
+        btnsSkip.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnsSkip.setFocusPainted(false);
         btnsSkip.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -198,6 +199,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         btnSelect.setBorder(null);
         btnSelect.setBorderPainted(false);
         btnSelect.setContentAreaFilled(false);
+        btnSelect.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSelect.setFocusPainted(false);
         btnSelect.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -218,6 +220,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         btnBack.setBorder(null);
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBack.setFocusPainted(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -344,6 +347,7 @@ public class SelectTypeFrame extends javax.swing.JFrame {
         btnSelectAnotherElements.setBorder(null);
         btnSelectAnotherElements.setBorderPainted(false);
         btnSelectAnotherElements.setContentAreaFilled(false);
+        btnSelectAnotherElements.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSelectAnotherElements.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSelectAnotherElementsMouseClicked(evt);

@@ -21,7 +21,6 @@ public class MainTunSafe extends javax.swing.JFrame {
     
     //--VARIABLE--..
     ImageIcon imgIcon;
-    CustomFont customFont;
     
     //--METHOD--..
     public MainTunSafe() {
@@ -323,7 +322,7 @@ public class MainTunSafe extends javax.swing.JFrame {
     public void fetchOrderMenu_DB(){
         OrderRecord record = new OrderRecord();
         int userId = record.getUserId();
-        System.out.println("UserId : "+userId);
+        //System.out.println("UserId : "+userId);
       
         jPanel1.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 0)); // Set layout for the main panel
         JPanel wrapperPanel = new JPanel();

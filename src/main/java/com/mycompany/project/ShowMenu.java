@@ -25,7 +25,7 @@ public class ShowMenu extends javax.swing.JFrame {
         MenuList Menu = new MenuList();
         Menu.SelectMenuList.add(SelectMenu);
         
-        System.out.println("Selected Menu : "+SelectMenu); //This is Selected Menu.. Final Result
+        //System.out.println("Selected Menu : "+SelectMenu); //This is Selected Menu.. Final Result
     }
 
     //--APACHE's METHOD--..
@@ -52,6 +52,7 @@ public class ShowMenu extends javax.swing.JFrame {
         btnNext.setBorder(null);
         btnNext.setBorderPainted(false);
         btnNext.setContentAreaFilled(false);
+        btnNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNext.setFocusPainted(false);
         btnNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

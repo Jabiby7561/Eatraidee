@@ -42,6 +42,7 @@ public class MainDaiWelaa extends javax.swing.JFrame {
         btnType.setBorder(null);
         btnType.setBorderPainted(false);
         btnType.setContentAreaFilled(false);
+        btnType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnType.setFocusPainted(false);
         btnType.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -62,6 +63,7 @@ public class MainDaiWelaa extends javax.swing.JFrame {
         btnMaterial.setBorder(null);
         btnMaterial.setBorderPainted(false);
         btnMaterial.setContentAreaFilled(false);
+        btnMaterial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMaterial.setFocusPainted(false);
         btnMaterial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -82,6 +84,7 @@ public class MainDaiWelaa extends javax.swing.JFrame {
         btnCook.setBorder(null);
         btnCook.setBorderPainted(false);
         btnCook.setContentAreaFilled(false);
+        btnCook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCook.setFocusPainted(false);
         btnCook.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -102,6 +105,7 @@ public class MainDaiWelaa extends javax.swing.JFrame {
         btnTaste.setBorder(null);
         btnTaste.setBorderPainted(false);
         btnTaste.setContentAreaFilled(false);
+        btnTaste.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTaste.setFocusPainted(false);
         btnTaste.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

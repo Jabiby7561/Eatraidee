@@ -188,6 +188,7 @@ public class MainSomHai extends javax.swing.JFrame {
         btnAdd.setBorder(null);
         btnAdd.setBorderPainted(false);
         btnAdd.setContentAreaFilled(false);
+        btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdd.setFocusPainted(false);
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -206,6 +207,7 @@ public class MainSomHai extends javax.swing.JFrame {
         btnDelete.setBorder(null);
         btnDelete.setBorderPainted(false);
         btnDelete.setContentAreaFilled(false);
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.setFocusPainted(false);
         btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -322,6 +324,7 @@ public class MainSomHai extends javax.swing.JFrame {
         btnRandom.setBorder(null);
         btnRandom.setBorderPainted(false);
         btnRandom.setContentAreaFilled(false);
+        btnRandom.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRandom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRandomMouseClicked(evt);

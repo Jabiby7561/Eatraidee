@@ -41,6 +41,7 @@ public class MainTunHew extends javax.swing.JFrame {
         btnFried.setBorder(null);
         btnFried.setBorderPainted(false);
         btnFried.setContentAreaFilled(false);
+        btnFried.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnFried.setFocusPainted(false);
         btnFried.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -61,6 +62,7 @@ public class MainTunHew extends javax.swing.JFrame {
         btnStirFried.setBorder(null);
         btnStirFried.setBorderPainted(false);
         btnStirFried.setContentAreaFilled(false);
+        btnStirFried.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnStirFried.setFocusPainted(false);
         btnStirFried.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -81,6 +83,7 @@ public class MainTunHew extends javax.swing.JFrame {
         btnBoiled.setBorder(null);
         btnBoiled.setBorderPainted(false);
         btnBoiled.setContentAreaFilled(false);
+        btnBoiled.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBoiled.setFocusPainted(false);
         btnBoiled.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

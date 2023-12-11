@@ -41,6 +41,7 @@ public class SignUpFrame extends javax.swing.JFrame{
         btnBack.setBorder(null);
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBackMouseEntered(evt);
@@ -244,7 +245,7 @@ public class SignUpFrame extends javax.swing.JFrame{
                 cursor.setString(1, username);
                 cursor.setString(2, password);
                 cursor.execute();
-                System.out.println("Data has been inserted!");
+                //System.out.println("Data has been inserted!");
             }catch(SQLException e){
                 System.out.println(e.toString());
             }

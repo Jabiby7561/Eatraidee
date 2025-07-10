@@ -19,6 +19,17 @@ Eat Rai Dee (Eatraidee) เป็นโปรเจกต์ UX/UI และพ�
 
 ---
 
+## 🖼️ ตัวอย่างหน้าจอ (Screenshots)
+
+|                      |                      |                      |
+|----------------------|----------------------|----------------------|
+| ![eat_rai_dee_1.png](eat_rai_dee_1.png) | ![eat_rai_dee_2.png](eat_rai_dee_2.png) | ![eat_rai_dee_3.png](eat_rai_dee_3.png) |
+| ![eat_rai_dee_4.png](eat_rai_dee_4.png) | ![eat_rai_dee_5.png](eat_rai_dee_5.png) | ![eat_rai_dee_6.png](eat_rai_dee_6.png) |
+| ![eat_rai_dee_7.png](eat_rai_dee_7.png) | ![eat_rai_dee_8.png](eat_rai_dee_8.png) | ![eat_rai_dee_9.png](eat_rai_dee_9.png) |
+| ![eat_rai_dee_10.png](eat_rai_dee_10.png) |                      |                      |
+
+---
+
 ## 🛠️ วิธีการติดตั้งและใช้งาน
 
 1. 📥 ดาวน์โหลดหรือโคลนโปรเจกต์นี้จาก GitHub
